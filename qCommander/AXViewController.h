@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase/Firebase.h>
 
 @interface AXViewController : UIViewController
 
+@property (strong) Firebase * firebase;
+- (IBAction)cmdNext:(id)sender;
+
+- (IBAction)cmdPrev:(id)sender;
 @end
