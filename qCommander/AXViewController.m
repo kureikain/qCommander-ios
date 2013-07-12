@@ -16,12 +16,19 @@
 
 @implementation AXViewController
 
-@synthesize firebase;
+@synthesize firebase, reader;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self bootstrapFirebase];
+    reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    [reader.scanner setSymbology:ZBAR_QRCODE
+                          config:ZBAR_CFG_ENABLE
+                              to:0];
+    reader.readerView.zoom = 1.0;
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -121,5 +128,24 @@
     NSString * s = [NSString stringWithFormat:@"%d", interval];
     NSDictionary *d = @{@"cmd": @"prev", @"t":s};
     [self pushCommand:d];
+}
+
+- (IBAction)scanToken:(id)sender {
+    [self presentModalViewController: reader
+                            animated: YES];
+}
+
+# pragma protocol ZBarSDK
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info
+{
+    id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
+
+    NSLog(@"%@", results);
+    
+    
+    UIImage *image =    [info objectForKey: UIImagePickerControllerOriginalImage];
+    
+    [reader dismissModalViewControllerAnimated: YES];
 }
 @end

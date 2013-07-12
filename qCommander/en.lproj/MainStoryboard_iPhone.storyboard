@@ -42,20 +42,59 @@
                                     <action selector="cmdNext:" destination="2" eventType="touchUpInside" id="dbh-tG-MXg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-pq-OKY">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanToken:" destination="2" eventType="touchUpInside" id="TIY-aH-TeE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkW-HP-8dX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vbr-9B-AX5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="40" id="7Vl-of-vP0"/>
-                            <constraint firstItem="MmN-ZO-WIe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="224" id="BfI-So-3KH"/>
-                            <constraint firstItem="MmN-ZO-WIe" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="69" id="Dg7-dJ-oZ9"/>
-                            <constraint firstItem="vbr-9B-AX5" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="147" id="KlK-GU-XSI"/>
+                            <constraint firstItem="MmN-ZO-WIe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="257" id="Z0R-ic-we4"/>
+                            <constraint firstItem="Q1c-pq-OKY" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="105" id="anW-pi-rgU"/>
+                            <constraint firstItem="vbr-9B-AX5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="234" id="aw4-nj-TRA"/>
+                            <constraint firstItem="TkW-HP-8dX" firstAttribute="centerX" secondItem="vbr-9B-AX5" secondAttribute="centerX" type="default" id="bzh-Mn-Fsf"/>
+                            <constraint firstItem="Q1c-pq-OKY" firstAttribute="top" secondItem="3" secondAttribute="top" constant="8" id="mWE-7H-DxT"/>
+                            <constraint firstAttribute="trailing" secondItem="MmN-ZO-WIe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="q4O-sD-k2H"/>
+                            <constraint firstItem="TkW-HP-8dX" firstAttribute="top" secondItem="3" secondAttribute="top" constant="89" id="xdM-Rm-XdE"/>
+                            <constraint firstItem="vbr-9B-AX5" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="9" id="xiE-Rc-WNY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tokenLbl" destination="TkW-HP-8dX" id="qi2-Xf-Ymy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="AXViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AXViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cmdNext:"/>
+                <relationship kind="action" name="cmdPrev:"/>
+                <relationship kind="action" name="scanToken:"/>
+                <relationship kind="outlet" name="tokenLbl" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

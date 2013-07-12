@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
+#import "ZBarSDK.h"
 
-@interface AXViewController : UIViewController
+@interface AXViewController : UIViewController <ZBarReaderDelegate>
 
 @property (strong) Firebase * firebase;
+@property (strong) ZBarReaderViewController *reader;
+
+@property (weak, nonatomic) IBOutlet UILabel *tokenLbl;
+
 - (IBAction)cmdNext:(id)sender;
 
 - (IBAction)cmdPrev:(id)sender;
+- (IBAction)scanToken:(id)sender;
+
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info;
+
 @end
