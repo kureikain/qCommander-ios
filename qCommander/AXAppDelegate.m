@@ -14,15 +14,6 @@
 {
     // Override point for customization after application launch.
     
-    UIViewController *myViewController = [[AXViewController alloc] init];
-    
-    navigationController = [[UINavigationController alloc] initWithRootViewController:myViewController];
-    
-    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    window.rootViewController = navigationController;
-    
-    [window makeKeyAndVisible];
     return YES;
 }
 							

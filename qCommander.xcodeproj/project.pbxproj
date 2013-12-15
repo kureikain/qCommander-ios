@@ -27,6 +27,7 @@
 		170A8E56178F6F7200853682 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 170A8E55178F6F7200853682 /* libicucore.dylib */; };
 		170A8E58178F6F7B00853682 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170A8E57178F6F7B00853682 /* CFNetwork.framework */; };
 		170A8E5A178F6F8500853682 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170A8E59178F6F8500853682 /* Security.framework */; };
+		172B1EDE185E3B510060C973 /* AXRemoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B1EDD185E3B510060C973 /* AXRemoteController.m */; };
 		1747F771178FCF1700FC2BF9 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F76B178FCF1700FC2BF9 /* libzbar.a */; };
 		1747F772178FCF1700FC2BF9 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1747F76D178FCF1700FC2BF9 /* zbar-back.png */; };
 		1747F773178FCF1700FC2BF9 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 1747F76E178FCF1700FC2BF9 /* zbar-help.html */; };
@@ -37,6 +38,8 @@
 		1747F77B178FCF7500FC2BF9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77A178FCF7500FC2BF9 /* CoreVideo.framework */; };
 		1747F77D178FCF7F00FC2BF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */; };
 		1747F77F178FCF8A00FC2BF9 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */; };
+		177921E2185E4D7100EF5CE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177921E0185E402300EF5CE2 /* SystemConfiguration.framework */; };
+		177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */; };
 		B8D881782BFD43C594ADDCA3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 689CC3BF29074CD88990986D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,8 @@
 		170A8E55178F6F7200853682 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		170A8E57178F6F7B00853682 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		170A8E59178F6F8500853682 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		172B1EDC185E3B510060C973 /* AXRemoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRemoteController.h; sourceTree = "<group>"; };
+		172B1EDD185E3B510060C973 /* AXRemoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXRemoteController.m; sourceTree = "<group>"; };
 		1747F757178FCF1700FC2BF9 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		1747F758178FCF1700FC2BF9 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		1747F759178FCF1700FC2BF9 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -107,6 +112,9 @@
 		1747F77A178FCF7500FC2BF9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		177921E0185E402300EF5CE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		177921E6185E4F8000EF5CE2 /* UIViewController+BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButton.h"; sourceTree = "<group>"; };
+		177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButton.m"; sourceTree = "<group>"; };
 		689CC3BF29074CD88990986D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA78B1A00084096AE9E0B1E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -116,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177921E2185E4D7100EF5CE2 /* SystemConfiguration.framework in Frameworks */,
+				170A8E58178F6F7B00853682 /* CFNetwork.framework in Frameworks */,
 				1747F77F178FCF8A00FC2BF9 /* libiconv.dylib in Frameworks */,
 				1747F77D178FCF7F00FC2BF9 /* QuartzCore.framework in Frameworks */,
 				1747F77B178FCF7500FC2BF9 /* CoreVideo.framework in Frameworks */,
@@ -123,7 +133,6 @@
 				1747F777178FCF6100FC2BF9 /* AVFoundation.framework in Frameworks */,
 				170A8E1A178F59AD00853682 /* Foundation.framework in Frameworks */,
 				170A8E5A178F6F8500853682 /* Security.framework in Frameworks */,
-				170A8E58178F6F7B00853682 /* CFNetwork.framework in Frameworks */,
 				170A8E56178F6F7200853682 /* libicucore.dylib in Frameworks */,
 				170A8E18178F59AD00853682 /* UIKit.framework in Frameworks */,
 				170A8E1C178F59AD00853682 /* CoreGraphics.framework in Frameworks */,
@@ -171,6 +180,7 @@
 		170A8E16178F59AD00853682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				177921E0185E402300EF5CE2 /* SystemConfiguration.framework */,
 				1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */,
 				1747F77A178FCF7500FC2BF9 /* CoreVideo.framework */,
 				1747F778178FCF6C00FC2BF9 /* CoreMedia.framework */,
@@ -189,12 +199,16 @@
 		170A8E1D178F59AD00853682 /* qCommander */ = {
 			isa = PBXGroup;
 			children = (
+				177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */,
+				177921E6185E4F8000EF5CE2 /* UIViewController+BackButton.h */,
 				170A8E26178F59AE00853682 /* AXAppDelegate.h */,
 				170A8E27178F59AE00853682 /* AXAppDelegate.m */,
 				170A8E2F178F59AE00853682 /* MainStoryboard_iPhone.storyboard */,
 				170A8E32178F59AE00853682 /* MainStoryboard_iPad.storyboard */,
 				170A8E35178F59AE00853682 /* AXViewController.h */,
 				170A8E36178F59AE00853682 /* AXViewController.m */,
+				172B1EDC185E3B510060C973 /* AXRemoteController.h */,
+				172B1EDD185E3B510060C973 /* AXRemoteController.m */,
 				170A8E1E178F59AE00853682 /* Supporting Files */,
 			);
 			path = qCommander;
@@ -445,7 +459,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172B1EDE185E3B510060C973 /* AXRemoteController.m in Sources */,
 				170A8E24178F59AE00853682 /* main.m in Sources */,
+				177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */,
 				170A8E28178F59AE00853682 /* AXAppDelegate.m in Sources */,
 				170A8E37178F59AE00853682 /* AXViewController.m in Sources */,
 			);

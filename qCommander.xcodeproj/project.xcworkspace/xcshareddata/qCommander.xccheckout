@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>90114632-5A63-4E60-A400-FA3468A1A77B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>qCommander</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>40E4C762-0125-41F0-BE91-ADF4AD493177</key>
+		<string>ssh://github.com/kureikain/qCommander-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>qCommander.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>40E4C762-0125-41F0-BE91-ADF4AD493177</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/kureikain/qCommander-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>40E4C762-0125-41F0-BE91-ADF4AD493177</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>40E4C762-0125-41F0-BE91-ADF4AD493177</string>
+			<key>IDESourceControlWCCName</key>
+			<string>qCommander</string>
+		</dict>
+	</array>
+</dict>
+</plist>
