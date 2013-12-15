@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AXViewController.h"
 
 @interface AXAppDelegate : UIResponder <UIApplicationDelegate>
 

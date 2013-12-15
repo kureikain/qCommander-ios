@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 #import "ZBarSDK.h"
+#import "MMDrawerController/MMDrawerController.h"
 
 @interface AXViewController : UIViewController <ZBarReaderDelegate>
 
