@@ -9,15 +9,8 @@
 // Firebase
 #define COCOAPODS_POD_AVAILABLE_Firebase
 #define COCOAPODS_VERSION_MAJOR_Firebase 1
-#define COCOAPODS_VERSION_MINOR_Firebase 0
-#define COCOAPODS_VERSION_PATCH_Firebase 5
-
-// JSONKit
-#define COCOAPODS_POD_AVAILABLE_JSONKit
-// This library does not follow semantic-versioning,
-// so we were not able to define version macros.
-// Please contact the author.
-// Version: 1.5pre.
+#define COCOAPODS_VERSION_MINOR_Firebase 1
+#define COCOAPODS_VERSION_PATCH_Firebase 1
 
 // MMDrawerController
 #define COCOAPODS_POD_AVAILABLE_MMDrawerController
