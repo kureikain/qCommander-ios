@@ -1,0 +1,13 @@
+//
+//  AXRemoteController.h
+//  qCommander
+//
+//  Created by Hoa Diem Nguyet on 12/15/13.
+//  Copyright (c) 2013 Hoa Diem Nguyet. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface AXRemoteController : UIViewController
+
+@end
