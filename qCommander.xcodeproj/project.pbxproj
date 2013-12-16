@@ -38,6 +38,7 @@
 		1747F77B178FCF7500FC2BF9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77A178FCF7500FC2BF9 /* CoreVideo.framework */; };
 		1747F77D178FCF7F00FC2BF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */; };
 		1747F77F178FCF8A00FC2BF9 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */; };
+		174D31CF185F1558003A2E68 /* HelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174D31CE185F1558003A2E68 /* HelpPageViewController.m */; };
 		177921E2185E4D7100EF5CE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177921E0185E402300EF5CE2 /* SystemConfiguration.framework */; };
 		177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */; };
 		B8D881782BFD43C594ADDCA3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 689CC3BF29074CD88990986D /* libPods.a */; };
@@ -112,6 +113,8 @@
 		1747F77A178FCF7500FC2BF9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		174D31CD185F1558003A2E68 /* HelpPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpPageViewController.h; sourceTree = "<group>"; };
+		174D31CE185F1558003A2E68 /* HelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpPageViewController.m; sourceTree = "<group>"; };
 		177921E0185E402300EF5CE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		177921E6185E4F8000EF5CE2 /* UIViewController+BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButton.h"; sourceTree = "<group>"; };
 		177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButton.m"; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				170A8E26178F59AE00853682 /* AXAppDelegate.h */,
 				170A8E27178F59AE00853682 /* AXAppDelegate.m */,
 				170A8E2F178F59AE00853682 /* MainStoryboard_iPhone.storyboard */,
+				174D31CD185F1558003A2E68 /* HelpPageViewController.h */,
+				174D31CE185F1558003A2E68 /* HelpPageViewController.m */,
 				170A8E32178F59AE00853682 /* MainStoryboard_iPad.storyboard */,
 				170A8E35178F59AE00853682 /* AXViewController.h */,
 				170A8E36178F59AE00853682 /* AXViewController.m */,
@@ -459,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174D31CF185F1558003A2E68 /* HelpPageViewController.m in Sources */,
 				172B1EDE185E3B510060C973 /* AXRemoteController.m in Sources */,
 				170A8E24178F59AE00853682 /* main.m in Sources */,
 				177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */,
