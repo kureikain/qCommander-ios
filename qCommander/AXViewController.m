@@ -22,16 +22,6 @@
 {
     [super viewDidLoad];
     
-    UIViewController * leftDrawer = [[UIViewController alloc] init];
-    UIViewController * center = self.navigationController;
-    UIViewController * rightDrawer = [[UIViewController alloc] init];
-    
-    MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:center
-                                             leftDrawerViewController:leftDrawer
-                                             rightDrawerViewController:rightDrawer];
-
-    
     [self bootstrapFirebase];
     reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;

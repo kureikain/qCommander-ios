@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vns-0f-N2l" kind="modal" identifier="help" id="T2e-Zo-35d"/>
+                                    <segue destination="DWa-qe-kJa" kind="push" id="rtL-Be-FaQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o8-6I-wMc">
@@ -61,43 +61,46 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ECF-Jt-IyO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="192" y="-11"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="c9t-Hf-TpH">
+        <!--Page View Controller-->
+        <scene sceneID="GwR-Pn-qJO">
             <objects>
-                <viewController storyboardIdentifier="Help_View" id="vns-0f-N2l" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="HelpViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" pageSpacing="4" navigationOrientation="horizontal" spineLocation="min" id="DWa-qe-kJa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PoA-XF-Jgo"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HK8-th-y7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="-10"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6FA-br-4d1">
+            <objects>
+                <viewController id="EKZ-sM-NES" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rcW-RG-Ae2"/>
-                        <viewControllerLayoutGuide type="bottom" id="FDH-0s-lbF"/>
+                        <viewControllerLayoutGuide type="top" id="VoT-Zc-CbH"/>
+                        <viewControllerLayoutGuide type="bottom" id="v15-b9-G8a"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="z02-1B-ONn">
+                    <view key="view" contentMode="scaleToFill" id="tzI-0X-wFJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDC-RZ-qvc">
-                                <rect key="frame" x="37" y="204" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vNt-eA-oWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AnX-fj-QaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="-62"/>
+            <point key="canvasLocation" x="915" y="49"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2SL-6V-2el">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Njp-oc-0nI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Njp-oc-0nI" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDr-4e-wnC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
