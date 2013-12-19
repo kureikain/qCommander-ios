@@ -61,11 +61,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ECF-Jt-IyO"/>
-                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="-11"/>
+            <point key="canvasLocation" x="-1143" y="562"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="GwR-Pn-qJO">
@@ -75,7 +74,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK8-th-y7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586" y="-10"/>
+            <point key="canvasLocation" x="-442" y="442"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6FA-br-4d1">
@@ -93,14 +92,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnX-fj-QaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="49"/>
+            <point key="canvasLocation" x="1043" y="660"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2SL-6V-2el">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Njp-oc-0nI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Njp-oc-0nI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDr-4e-wnC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -112,7 +110,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVq-dA-3B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="-11"/>
+            <point key="canvasLocation" x="-1138" y="-104"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
