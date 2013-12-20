@@ -17,11 +17,13 @@
 @implementation AXViewController
 
 @synthesize firebase, reader;
+@synthesize accessCodeField;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.accessCodeField setDelegate:self];
+    [self.accessCodeField setKeyboardType:UIKeyboardTypePhonePad];
     [self bootstrapFirebase];
     reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
@@ -148,5 +150,17 @@
     UIImage *image =    [info objectForKey: UIImagePickerControllerOriginalImage];
     
     [reader dismissModalViewControllerAnimated: YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"connectWithAccessCode"]) {
+        AXRemoteController *destViewController = segue.destinationViewController;
+        destViewController.accessCode = self.accessCodeField.text;
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 @end

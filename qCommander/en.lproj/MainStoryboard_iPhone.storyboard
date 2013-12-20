@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="AXViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FrontViewController" id="2" customClass="AXViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tqW-0o-ZaM"/>
                         <viewControllerLayoutGuide type="bottom" id="abc-G2-ObU"/>
@@ -27,6 +27,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Slideshow ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rL-on-5GT">
                                 <rect key="frame" x="67" y="162" width="175" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -36,6 +39,9 @@
                                 <state key="normal" title="Connect">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mO6-eq-bfv" kind="push" identifier="connectWithAccessCode" id="j9e-8c-QDr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUG-Nn-VAL">
                                 <rect key="frame" x="121" y="364" width="32" height="30"/>
@@ -61,10 +67,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ECF-Jt-IyO"/>
+                    <connections>
+                        <outlet property="accessCodeField" destination="7rL-on-5GT" id="BmX-uV-dDC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1143" y="562"/>
+            <point key="canvasLocation" x="-622" y="-139"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="GwR-Pn-qJO">
@@ -74,7 +83,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK8-th-y7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442" y="442"/>
+            <point key="canvasLocation" x="-1002" y="615"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6FA-br-4d1">
@@ -111,6 +120,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVq-dA-3B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1138" y="-104"/>
+        </scene>
+        <!--Remote Controller-->
+        <scene sceneID="aOX-y3-J67">
+            <objects>
+                <viewController storyboardIdentifier="RemoteViewController" id="mO6-eq-bfv" customClass="AXRemoteController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="37V-2u-2l0"/>
+                        <viewControllerLayoutGuide type="bottom" id="ef7-64-Arg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZwL-bB-1k1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="450-ue-qkP">
+                                <rect key="frame" x="75" y="133" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ez-hk-G5c">
+                                <rect key="frame" x="200" y="165" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I5I-yk-AMQ"/>
+                    <connections>
+                        <outlet property="accessCodeLabel" destination="3ez-hk-G5c" id="Sbj-bF-i2F"/>
+                        <outlet property="connectivityIndicator" destination="450-ue-qkP" id="K4K-yT-Cl7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ac7-Mu-lnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="-152"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

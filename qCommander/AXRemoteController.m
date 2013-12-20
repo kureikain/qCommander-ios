@@ -14,6 +14,9 @@
 
 @implementation AXRemoteController
 
+@synthesize connectivityIndicator, accessCodeLabel;
+@synthesize accessCode;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Access code is: %@",accessCode);
+    [self.accessCodeLabel setText:accessCode];
 	// Do any additional setup after loading the view.
 }
 

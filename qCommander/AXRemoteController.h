@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+//typedef enum slide slide;
+//
+
 @interface AXRemoteController : UIViewController
+
+
+@property (nonatomic, strong) IBOutlet UILabel *accessCodeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *connectivityIndicator;
+@property (nonatomic, strong) NSString *accessCode;
+
+@property (nonatomic, strong) NSNumber *currentSlide;
+//@property (nonatomic, strong) NSNumber *currentSlide;
 
 @end

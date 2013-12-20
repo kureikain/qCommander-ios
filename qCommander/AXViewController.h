@@ -10,8 +10,11 @@
 #import <Firebase/Firebase.h>
 #import "ZBarSDK.h"
 #import "MMDrawerController/MMDrawerController.h"
+#import "AXRemoteController.h"
 
-@interface AXViewController : UIViewController <ZBarReaderDelegate>
+@interface AXViewController : UIViewController <ZBarReaderDelegate, UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *accessCodeField;
 
 @property (strong) Firebase * firebase;
 @property (strong) ZBarReaderViewController *reader;
@@ -26,4 +29,14 @@
 - (void) imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info;
 
+
+/*
+ Prepare some data when navigating with segue
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
+/*
+ Handle for keyboard
+*/
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
 @end
