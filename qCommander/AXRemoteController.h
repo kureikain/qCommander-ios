@@ -19,6 +19,6 @@
 @property (nonatomic, strong) NSString *accessCode;
 
 @property (nonatomic, strong) NSNumber *currentSlide;
-//@property (nonatomic, strong) NSNumber *currentSlide;
+@property (nonatomic, strong) NSNumber *quantityOfSlide;
 
 @end

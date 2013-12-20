@@ -11,7 +11,9 @@
 #import <CommonCrypto/CommonHMAC.h>
 
 @interface AXViewController ()
-
+{
+    BOOL  _scanningCode;
+}
 @end
 
 @implementation AXViewController
@@ -22,17 +24,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setUpEventHandler];
+    [self bootstrapFirebase];
+    [self setUpZbar];
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) setUpEventHandler
+{
     [self.accessCodeField setDelegate:self];
     [self.accessCodeField setKeyboardType:UIKeyboardTypePhonePad];
-    [self bootstrapFirebase];
+}
+
+- (void) setUpZbar
+{
     reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
-    [reader.scanner setSymbology:ZBAR_QRCODE
-                          config:ZBAR_CFG_ENABLE
-                              to:0];
+    [reader.scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:1];
     reader.readerView.zoom = 1.0;
+//    reader.readerView s
+
+//    if ([ZBarReaderController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+//    reader.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    [reader.scanner setSymbology: ZBAR_I25
+//                          config: ZBAR_CFG_ENABLE
+//                              to: 0];
     
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,22 +151,51 @@
 }
 
 - (IBAction)scanToken:(id)sender {
-    [self presentModalViewController: reader
-                            animated: YES];
+//    [self presentModalViewController: reader animated: YES];
+    _scanningCode = FALSE;
+    [self presentViewController:reader animated:YES completion:nil];
+//    [reader.readerView start];
+}
+
+
+- (void) foundAccesCode: (NSString*) accessCode {
+    NSLog(@"Process: %@", accessCode);
+    [accessCodeField setText:accessCode];
 }
 
 # pragma protocol ZBarSDK
-- (void) imagePickerController: (UIImagePickerController*) reader
- didFinishPickingMediaWithInfo: (NSDictionary*) info
+- (void) imagePickerController: (UIImagePickerController*)scanner didFinishPickingMediaWithInfo: (NSDictionary*) info
 {
+    if (_scanningCode) {
+        return;
+    }
+    _scanningCode = TRUE;
+    [scanner dismissViewControllerAnimated:YES completion:^() {
+        NSLog(@"%@",@"Succesfully to find the image");
+    }];
+    
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
+    
+    ZBarSymbol *symbol = nil;
+    for (symbol in results) {
+        @try {
+            NSLog(@"Access Code Is: %@", symbol.data);
+            NSData *data = [symbol.data dataUsingEncoding:NSUTF8StringEncoding];
+            NSError * jsonParsingError;
+            NSDictionary *a = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
+            if (nil == jsonParsingError) {
+                [self foundAccesCode:(NSString *)[a objectForKey:@"code"]];
+                break; //Get the 1st one
+            }
 
-    NSLog(@"%@", results);
-    
-    
-    UIImage *image =    [info objectForKey: UIImagePickerControllerOriginalImage];
-    
-    [reader dismissModalViewControllerAnimated: YES];
+        }
+        @catch (NSException *e) {
+            NSLog(@"Error: %@", e);
+        }
+        @finally {
+            
+        }
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
