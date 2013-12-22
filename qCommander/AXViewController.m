@@ -201,7 +201,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"connectWithAccessCode"]) {
         AXRemoteController *destViewController = segue.destinationViewController;
-        destViewController.accessCode = self.accessCodeField.text;
+        
+        [destViewController connectWithAccessCode:self.accessCodeField.text];
     }
 }
 

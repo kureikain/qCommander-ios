@@ -15,7 +15,7 @@
 @implementation AXRemoteController
 
 @synthesize connectivityIndicator, accessCodeLabel;
-@synthesize accessCode;
+@synthesize slide;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +23,7 @@
     if (self) {
         // Custom initialization
     }
+    [self setSlide:[AXQSlide init]];
     return self;
 }
 

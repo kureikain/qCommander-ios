@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AXQSlide.h"
+#import "AXControl.h"
+
 //typedef enum slide slide;
 //
 
@@ -16,9 +19,13 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *accessCodeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *connectivityIndicator;
-@property (nonatomic, strong) NSString *accessCode;
 
-@property (nonatomic, strong) NSNumber *currentSlide;
-@property (nonatomic, strong) NSNumber *quantityOfSlide;
 
+@property (nonatomic, strong) AXControl *remoteControl;
+@property (nonatomic, strong) AXQSlide *slide;
+
+/*
+ Initiate connection to this slideshow
+ */
+- (void) connectWithAccessCode:(NSString *) code;
 @end
