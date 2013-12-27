@@ -35,7 +35,7 @@
  Found access code
  Fill in this value and connect.
  */
-- (void) foundAccesCode: (NSString*) accessCode;
+- (void) foundAccesCode: (NSString*) accessCode withURL:(NSString *) url;
 
 /*
  Prepare some data when navigating with segue

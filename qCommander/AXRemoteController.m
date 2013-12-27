@@ -30,8 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Access code is: %@",accessCode);
-    [self.accessCodeLabel setText:accessCode];
 	// Do any additional setup after loading the view.
 }
 
@@ -41,4 +39,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) connectWithAccessCode:(NSString *) code
+{
+//    slide.url
+}
 @end

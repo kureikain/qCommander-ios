@@ -14,14 +14,17 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.4.0):
     - MMDrawerController/Core
+  - NUI (0.4.0)
 
 DEPENDENCIES:
   - Firebase (~> 1.1.1)
   - MMDrawerController+Storyboard (~> 0.0.1)
+  - NUI (~> 0.4.0)
 
 SPEC CHECKSUMS:
   Firebase: dbe43438045e6208f42d2624b43bc9195fb840f1
   MMDrawerController: 44baaee6b79487b4681eb61597fb790586909c0c
   MMDrawerController+Storyboard: b245b3a2ff977df8501ca1b99efd2c097d0b39dd
+  NUI: 6e8921b4e628aa47f05cd7a481ecaa75354db707
 
 COCOAPODS: 0.28.0

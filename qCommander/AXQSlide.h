@@ -11,7 +11,8 @@
 
 @interface AXQSlide : NSObject
 
-@property (nonatomic, strong) NSString *accessCode;
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *url;
 
 @property (nonatomic, strong) NSNumber *currentSlide;
 @property (nonatomic, strong) NSNumber *quantityOfSlide;
@@ -28,4 +29,5 @@
 - (BOOL) getConnectionStatus;
 - (BOOL) connect;
 
++ (AXQSlide *) initWithUrl:(NSString *) url andToken:(NSString *) code;
 @end

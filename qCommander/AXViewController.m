@@ -158,7 +158,7 @@
 }
 
 
-- (void) foundAccesCode: (NSString*) accessCode {
+- (void) foundAccesCode: (NSString*) accessCode withURL:(NSString *) url{
     NSLog(@"Process: %@", accessCode);
     [accessCodeField setText:accessCode];
 }
@@ -184,7 +184,7 @@
             NSError * jsonParsingError;
             NSDictionary *a = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
             if (nil == jsonParsingError) {
-                [self foundAccesCode:(NSString *)[a objectForKey:@"code"]];
+                [self foundAccesCode:(NSString *)[a objectForKey:@"token"] withURL:(NSString *)[a objectForKey:@"url"]];
                 break; //Get the 1st one
             }
 
@@ -199,9 +199,9 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:@"connectWithAccessCode"]) {
         AXRemoteController *destViewController = segue.destinationViewController;
-        
         [destViewController connectWithAccessCode:self.accessCodeField.text];
     }
 }
