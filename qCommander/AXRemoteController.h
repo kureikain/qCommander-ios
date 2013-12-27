@@ -28,4 +28,10 @@
  Initiate connection to this slideshow
  */
 - (void) connectWithAccessCode:(NSString *) code;
+
+/*
+ Action button
+ */
+- (IBAction)cmdPrevious:(id)sender;
+- (IBAction)cmdNext:(id)sender;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#define BACKEND_DATA_HOST @"https://qcommander.firebaseio-demo.com/"
 
 @interface AXQSlide : NSObject
 
@@ -28,6 +28,11 @@
 
 - (BOOL) getConnectionStatus;
 - (BOOL) connect;
+
+/*
+ Get firebase back-end data key
+ */
+- (NSString *) dataKey:(NSString *)key;
 
 + (AXQSlide *) initWithUrl:(NSString *) url andToken:(NSString *) code;
 @end

@@ -41,6 +41,17 @@
 
 - (void) connectWithAccessCode:(NSString *) code
 {
-//    slide.url
+    [slide setToken:code];
+    [self.accessCodeLabel setText:code];
+    
 }
+
+- (IBAction)cmdPrevious:(id)sender {
+    [slide next];
+}
+- (IBAction)cmdNext:(id)sender {
+    [slide previous];
+}
+
+
 @end
