@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Firebase/Firebase.h>
+#include <stdlib.h>
+#import <CommonCrypto/CommonDigest.h>
+
 #define BACKEND_DATA_HOST @"https://qcommander.firebaseio-demo.com/"
 
 @interface AXQSlide : NSObject
@@ -34,5 +38,5 @@
  */
 - (NSString *) dataKey:(NSString *)key;
 
-+ (AXQSlide *) initWithUrl:(NSString *) url andToken:(NSString *) code;
+- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl;
 @end

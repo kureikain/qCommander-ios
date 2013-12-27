@@ -23,7 +23,6 @@
     if (self) {
         // Custom initialization
     }
-    [self setSlide:[AXQSlide init]];
     return self;
 }
 
@@ -41,16 +40,17 @@
 
 - (void) connectWithAccessCode:(NSString *) code
 {
-    [slide setToken:code];
+    slide = [[AXQSlide alloc] initWithToken:code andUrl:@""];
     [self.accessCodeLabel setText:code];
-    
 }
 
-- (IBAction)cmdPrevious:(id)sender {
-    [slide next];
-}
-- (IBAction)cmdNext:(id)sender {
+- (IBAction)cmdPrevious:(id)sender
+{
     [slide previous];
+}
+- (IBAction)cmdNext:(id)sender
+{
+    [slide next];
 }
 
 
