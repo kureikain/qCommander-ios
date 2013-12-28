@@ -94,9 +94,17 @@
     self = [super init];
     [self setToken:code];
     [self setUrl:aUrl];
+    [self handshake];
     return self;
 }
 
+- (BOOL) handshake
+{
+    Firebase* nameRef = [[Firebase alloc] initWithUrl:[self genCmdUri]];
+    UIDevice * d = [UIDevice currentDevice];
+    [nameRef setValue:@{@"cmd": @"handshake", @"from": [[d identifierForVendor] UUIDString], @"name":[d name]}];
+    return TRUE;
+}
 - (AXQSlide *) initWithToken:(NSString *) code
 {
     return [self initWithToken:code andUrl:@""];
