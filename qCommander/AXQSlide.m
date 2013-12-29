@@ -129,8 +129,36 @@
     [nameRef setValue:@{@"cmd": @"handshake", @"from": [[d identifierForVendor] UUIDString], @"name":[d name]}];
     return TRUE;
 }
-- (AXQSlide *) initWithToken:(NSString *) code
+
+- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock
 {
-    return [self initWithToken:code andUrl:@""];
+    Firebase* slideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info"]];
+    [slideRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if(snapshot.value == [NSNull null]) {
+            NSLog(@"Not data yet");
+        } else {
+            NSLog(@"Screenshot URL %@", (NSString *)snapshot.value);
+            @try {
+                completionBlock((NSDictionary *)snapshot.value);
+            }
+            @catch (NSException* e) {
+                NSLog(@"Warning: Cannot load Screenshot");
+            }
+            //            NSString* firstName = snapshot.value[@"name"][@"first"];
+            //            NSString* lastName = snapshot.value[@"name"][@"last"];
+            //            NSLog(@"User julie's full name is: %@ %@", firstName, lastName);
+        }
+    }];
+    return TRUE;
+}
+
+- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock
+{
+    self = [self initWithToken:code andUrl:@""];
+    if (self == nil) {
+        
+    }
+    [self finishWithBlock:completionBlock];
+    return self;
 }
 @end

@@ -15,6 +15,7 @@
 
 //typedef void (^ UpdateScreenshotBlock)(id, int);
 typedef void (^ UpdateScreenshotBlock)(NSString *);
+typedef void (^ FinishLoadSlide)(NSDictionary *);
 
 @interface AXQSlide : NSObject
 
@@ -46,5 +47,10 @@ typedef void (^ UpdateScreenshotBlock)(NSString *);
  */
 - (NSString *) dataKey:(NSString *)key;
 
-- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl;
+/*
+ Setup callback once slide info load or change
+ */
+- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock;
+
+- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock ;
 @end

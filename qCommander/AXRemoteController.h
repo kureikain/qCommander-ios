@@ -28,6 +28,8 @@
 
 @property (weak, nonatomic) IBOutlet WTURLImageView *screenshot;
 
+@property (strong, nonatomic) IBOutlet UILabel *slideTitle;
+
 
 /*
  Initiate connection to this slideshow

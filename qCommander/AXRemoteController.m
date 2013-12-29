@@ -19,6 +19,7 @@
             , lockControl;
 
 @synthesize slide
+            , slideTitle
             , screenshot;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,7 +47,15 @@
 - (void) connectWithAccessCode:(NSString *) code
 {
     [self.accessCodeLabel setText:code];
-    slide = [[AXQSlide alloc] initWithToken:code andUrl:@""];
+    slide = [[AXQSlide alloc] initWithToken:code andUrl:@"" whenCompletion:^(NSDictionary * slideInfo) {
+        NSLog(@"Data change");
+        [slideTitle setText:slideInfo[@"title"]];
+        WTURLImageViewPreset *p = [[WTURLImageViewPreset alloc] init];
+        //        p.options.WTURLImageViewOptionShowActivityIndicator = 1;
+        p.options = WTURLImageViewOptionShowActivityIndicator;
+        [screenshot setURL:[NSURL URLWithString:(NSString *)slideInfo[@"currentSlideUrl"]] withPreset:p];
+    }];
+    
     [self refreshScreenshot];
 }
 
@@ -58,6 +67,7 @@
         p.options = WTURLImageViewOptionShowActivityIndicator;
         [screenshot setURL:[NSURL URLWithString:url] withPreset:p];
     }];
+    
 }
 
 - (IBAction)toggleControlLock:(id)sender {
