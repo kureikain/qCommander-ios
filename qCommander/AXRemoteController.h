@@ -21,6 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *accessCodeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *connectivityIndicator;
 
+@property (nonatomic) BOOL lockControl;
 
 @property (nonatomic, strong) AXControl *remoteControl;
 @property (nonatomic, strong) AXQSlide *slide;
@@ -41,6 +42,12 @@
 /*
  Action button
  */
+
+/*
+ Lock to avoid accident move slide
+ */
+- (IBAction)toggleControlLock:(id)sender;
+
 - (IBAction)cmdPrevious:(id)sender;
 - (IBAction)cmdNext:(id)sender;
 @end

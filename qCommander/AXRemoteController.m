@@ -14,8 +14,12 @@
 
 @implementation AXRemoteController
 
-@synthesize connectivityIndicator, accessCodeLabel;
-@synthesize slide, screenshot;
+@synthesize connectivityIndicator
+            , accessCodeLabel
+            , lockControl;
+
+@synthesize slide
+            , screenshot;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +34,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.lockControl = FALSE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,14 +60,17 @@
     }];
 }
 
+- (IBAction)toggleControlLock:(id)sender {
+    self.lockControl = !(self.lockControl);
+}
+
 - (IBAction)cmdPrevious:(id)sender
 {
-    [slide previous];
+    !self.lockControl && [slide previous];
 }
 - (IBAction)cmdNext:(id)sender
 {
-    [slide next];
+    !self.lockControl && [slide next];
 }
-
 
 @end
