@@ -151,10 +151,10 @@
 }
 
 - (IBAction)scanToken:(id)sender {
-//    [self presentModalViewController: reader animated: YES];
     _scanningCode = FALSE;
-    [self presentViewController:reader animated:YES completion:nil];
-//    [reader.readerView start];
+    [self presentViewController:reader animated:YES completion:^() {
+        _scanningCode = TRUE;
+    }];
 }
 
 
