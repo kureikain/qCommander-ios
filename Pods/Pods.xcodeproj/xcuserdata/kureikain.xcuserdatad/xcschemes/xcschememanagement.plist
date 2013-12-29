@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Firebase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GVCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-WTExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WTURLImageView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08B528DF6B9B440CA12DB86F</key>
+		<key>159655E98CC349D5B31FC5E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>26C35F9A9794495DB1A00995</key>
+		<key>187583D6F90F49C68E2BA8DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>869698AE78014C5785F7FD19</key>
+		<key>579211C505E742DC81BE2600</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>992196B02031450FA64FE9D7</key>
+		<key>5EFAAEA1FCB244FABEDA628E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA65700B402A4A07BBC60997</key>
+		<key>5FB76E6369114893A5B7351E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A077FEEDB61E488894383FB6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B997D343F6C047F997B99182</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC41CF82A80641C0BFFCDE13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F40C8CC4553D4711A985577D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,5 +1,7 @@
 PODS:
+  - AFNetworking (1.3.3)
   - Firebase (1.1.1)
+  - GVCache (1.0.1)
   - MMDrawerController (0.4.0):
     - MMDrawerController/Core
     - MMDrawerController/MMDrawerBarButtonItem
@@ -15,16 +17,27 @@ PODS:
   - MMDrawerController/Subclass (0.4.0):
     - MMDrawerController/Core
   - NUI (0.4.0)
+  - WTExtension/UIImage+WTExtension (1.2.1)
+  - WTURLImageView (1.1.0):
+    - AFNetworking (>= 1.0)
+    - GVCache (>= 1.0)
+    - WTExtension/UIImage+WTExtension (>= 1.2.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 1.0)
   - Firebase (~> 1.1.1)
   - MMDrawerController+Storyboard (~> 0.0.1)
   - NUI (~> 0.4.0)
+  - WTURLImageView (~> 1.1.0)
 
 SPEC CHECKSUMS:
+  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   Firebase: dbe43438045e6208f42d2624b43bc9195fb840f1
+  GVCache: dcf482c12f3fdbc6848e4f7b1b7a48dd6af0a1d9
   MMDrawerController: 44baaee6b79487b4681eb61597fb790586909c0c
   MMDrawerController+Storyboard: b245b3a2ff977df8501ca1b99efd2c097d0b39dd
   NUI: 6e8921b4e628aa47f05cd7a481ecaa75354db707
+  WTExtension: 636071786394da7c57e130e7d9274d3c082a1b06
+  WTURLImageView: 07fbaad72a1c3ba39e2246fe6a5dbbc93c84a59d
 
 COCOAPODS: 0.28.0
