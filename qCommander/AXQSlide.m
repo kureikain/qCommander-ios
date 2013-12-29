@@ -35,7 +35,12 @@
             NSLog(@"Not data yet");
         } else {
             NSLog(@"Screenshot URL %@", (NSString *)snapshot.value);
-            updateBlock((NSString *)snapshot.value);
+            @try {
+                updateBlock((NSString *)snapshot.value);
+            }
+            @catch (NSException* e) {
+                NSLog(@"Warning: Cannot load Screenshot");
+            }
 //            NSString* firstName = snapshot.value[@"name"][@"first"];
 //            NSString* lastName = snapshot.value[@"name"][@"last"];
 //            NSLog(@"User julie's full name is: %@ %@", firstName, lastName);

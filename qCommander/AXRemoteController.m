@@ -48,8 +48,10 @@
 - (void) refreshScreenshot
 {
     [slide loadScreenshotWithCallback: ^(NSString *url ) {
-//        [screenshot setUrlString:url];
-        [screenshot setURL:[NSURL URLWithString:url]];
+        WTURLImageViewPreset *p = [[WTURLImageViewPreset alloc] init];
+//        p.options.WTURLImageViewOptionShowActivityIndicator = 1;
+        p.options = WTURLImageViewOptionShowActivityIndicator;
+        [screenshot setURL:[NSURL URLWithString:url] withPreset:p];
     }];
 }
 
