@@ -26,6 +26,23 @@
     return TRUE;
 }
 
+- (BOOL) loadScreenshotWithCallback:(UpdateScreenshotBlock) updateBlock;
+{
+    Firebase* currentSlideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info/currentSlideUrl"]];
+    
+    [currentSlideRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if(snapshot.value == [NSNull null]) {
+            NSLog(@"Not data yet");
+        } else {
+            updateBlock(snapshot.value);
+            NSString* firstName = snapshot.value[@"name"][@"first"];
+            NSString* lastName = snapshot.value[@"name"][@"last"];
+            NSLog(@"User julie's full name is: %@ %@", firstName, lastName);
+        }
+    }];
+    return TRUE;
+}
+
 - (BOOL) jump:(int) number
 {
     Firebase* nameRef = [[Firebase alloc] initWithUrl:[self genCmdUri]];
@@ -82,6 +99,7 @@
 
 /*
  Generate firbase url for a data set
+ - key is whatever follow firebaseurl/<token>/<what-ever-after>
  */
 - (NSString *) dataKey:(NSString *)key
 {

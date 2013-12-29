@@ -13,6 +13,9 @@
 
 #define BACKEND_DATA_HOST @"https://qcommander.firebaseio-demo.com/"
 
+//typedef void (^ UpdateScreenshotBlock)(id, int);
+typedef void (^ UpdateScreenshotBlock)(NSString *);
+
 @interface AXQSlide : NSObject
 
 @property (nonatomic, strong) NSString *token;
@@ -32,6 +35,11 @@
 
 - (BOOL) getConnectionStatus;
 - (BOOL) connect;
+
+/*
+ Load screenshot, execute callbac once done
+ */
+- (BOOL) loadScreenshotWithCallback:(UpdateScreenshotBlock) updateBlock;
 
 /*
  Get firebase back-end data key

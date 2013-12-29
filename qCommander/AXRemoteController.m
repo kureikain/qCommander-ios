@@ -15,7 +15,7 @@
 @implementation AXRemoteController
 
 @synthesize connectivityIndicator, accessCodeLabel;
-@synthesize slide;
+@synthesize slide, screenshot;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +42,13 @@
 {
     slide = [[AXQSlide alloc] initWithToken:code andUrl:@""];
     [self.accessCodeLabel setText:code];
+}
+
+- (void) refreshScreenshot
+{
+    [slide loadScreenshotWithCallback: ^(NSString *url ) {
+        [screenshot setUrlString:url];
+    }];
 }
 
 - (IBAction)cmdPrevious:(id)sender

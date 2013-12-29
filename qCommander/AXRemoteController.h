@@ -10,6 +10,7 @@
 
 #import "AXQSlide.h"
 #import "AXControl.h"
+#import <WTURLImageView/WTURLImageView.h>
 
 //typedef enum slide slide;
 //
@@ -24,10 +25,18 @@
 @property (nonatomic, strong) AXControl *remoteControl;
 @property (nonatomic, strong) AXQSlide *slide;
 
+@property (weak, nonatomic) IBOutlet WTURLImageView *screenshot;
+
+
 /*
  Initiate connection to this slideshow
  */
 - (void) connectWithAccessCode:(NSString *) code;
+
+/*
+ Update current screenshot to phone
+ */
+- (void) refreshScreenshot;
 
 /*
  Action button
