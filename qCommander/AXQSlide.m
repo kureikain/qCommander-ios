@@ -34,10 +34,11 @@
         if(snapshot.value == [NSNull null]) {
             NSLog(@"Not data yet");
         } else {
-            updateBlock(snapshot.value);
-            NSString* firstName = snapshot.value[@"name"][@"first"];
-            NSString* lastName = snapshot.value[@"name"][@"last"];
-            NSLog(@"User julie's full name is: %@ %@", firstName, lastName);
+            NSLog(@"Screenshot URL %@", (NSString *)snapshot.value);
+            updateBlock((NSString *)snapshot.value);
+//            NSString* firstName = snapshot.value[@"name"][@"first"];
+//            NSString* lastName = snapshot.value[@"name"][@"last"];
+//            NSLog(@"User julie's full name is: %@ %@", firstName, lastName);
         }
     }];
     return TRUE;

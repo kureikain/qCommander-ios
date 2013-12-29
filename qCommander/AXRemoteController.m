@@ -40,14 +40,16 @@
 
 - (void) connectWithAccessCode:(NSString *) code
 {
-    slide = [[AXQSlide alloc] initWithToken:code andUrl:@""];
     [self.accessCodeLabel setText:code];
+    slide = [[AXQSlide alloc] initWithToken:code andUrl:@""];
+    [self refreshScreenshot];
 }
 
 - (void) refreshScreenshot
 {
     [slide loadScreenshotWithCallback: ^(NSString *url ) {
-        [screenshot setUrlString:url];
+//        [screenshot setUrlString:url];
+        [screenshot setURL:[NSURL URLWithString:url]];
     }];
 }
 
