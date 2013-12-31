@@ -131,12 +131,30 @@ Allow this receiving remote event from lock screen
                 dispatch_async(dispatch_get_main_queue(), ^{
                     MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage: [UIImage imageWithData:imageData]];
                     
-                    [songInfo setObject:slideInfo[@"title"] forKey:MPMediaItemPropertyTitle];
-                    [songInfo setObject:slideInfo[@"author"] forKey:MPMediaItemPropertyArtist];
-                    [songInfo setObject:slideInfo[@"provider"] forKey:MPMediaItemPropertyAlbumTitle];
+                    if (nil != slideInfo[@"title"])
+                    {
+                        [songInfo setObject:slideInfo[@"title"] forKey:MPMediaItemPropertyTitle];
+                    }
+                    if (nil != slideInfo[@"title"])
+                    {
+                        [songInfo setObject:slideInfo[@"author"] forKey:MPMediaItemPropertyArtist];
+                    }
+                    if (nil != slideInfo[@"title"])
+                    {
+                        [songInfo setObject:slideInfo[@"provider"] forKey:MPMediaItemPropertyAlbumTitle];
+                    }
+                    if (nil != slideInfo[@"title"])
+                    {
                     [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+                    }
+                   
+                    @try {
+                        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
+                    }
+                    @catch (NSException *e) {
+                        
+                    }
                     
-                    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
                 });
             });
             
