@@ -46,6 +46,7 @@
 		177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */; };
 		177CEF5D1870EAA60004D3D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CEF5C1870EAA60004D3D8 /* MediaPlayer.framework */; };
 		1786239F18704460008F2BD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1786239E18704460008F2BD7 /* MobileCoreServices.framework */; };
+		17A72E381872BE8B0028A66A /* empty_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17A72E371872BE8B0028A66A /* empty_sound.mp3 */; };
 		B8D881782BFD43C594ADDCA3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 689CC3BF29074CD88990986D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButton.m"; sourceTree = "<group>"; };
 		177CEF5C1870EAA60004D3D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1786239E18704460008F2BD7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		17A72E371872BE8B0028A66A /* empty_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = empty_sound.mp3; path = Resources/empty_sound.mp3; sourceTree = "<group>"; };
 		689CC3BF29074CD88990986D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA78B1A00084096AE9E0B1E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 		170A8E0B178F59AD00853682 = {
 			isa = PBXGroup;
 			children = (
+				17A72E361872BE6D0028A66A /* Sound */,
 				1768E27118719AB800FCA52F /* Images */,
 				1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */,
 				1747F753178FCF1700FC2BF9 /* ZBarSDK */,
@@ -345,6 +348,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		17A72E361872BE6D0028A66A /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				17A72E371872BE8B0028A66A /* empty_sound.mp3 */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,6 +440,7 @@
 				1747F772178FCF1700FC2BF9 /* zbar-back.png in Resources */,
 				1747F773178FCF1700FC2BF9 /* zbar-help.html in Resources */,
 				1747F774178FCF1700FC2BF9 /* zbar-helpicons.png in Resources */,
+				17A72E381872BE8B0028A66A /* empty_sound.mp3 in Resources */,
 				1747F775178FCF1700FC2BF9 /* zbar-samples.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

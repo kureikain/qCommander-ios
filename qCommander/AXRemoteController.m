@@ -40,25 +40,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.lockControl = FALSE;
-//
-//    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-//    nowPlayingCenter = [MPNowPlayingInfoCenter defaultCenter];
-//    
-//    NSMutableDictionary * slideInfo = [[NSMutableDictionary alloc] init];
-//    [slideInfo setObject:@"sas" forKey:MPMediaItemPropertyTitle];
-//    [slideInfo setObject:@"NCC" forKey:MPMediaItemPropertyAlbumTitle];
-//
-//    MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"app_icon_960x640"]];
-//    [slideInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
-//    
-////  @{MPMediaItemPropertyTitle: @"test"};
-//    [nowPlayingCenter setNowPlayingInfo: slideInfo] ;
-    
     
     [[AVAudioSession sharedInstance] setDelegate: self];
-    
     NSError *myErr;
-    
     // Initialize the AVAudioSession here.
     if (![[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&myErr]) {
         // Handle the error here.
@@ -71,22 +55,56 @@
     
     //initialize our audio player
 //    audioPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://www.cocoanetics.com/files/Cocoanetics_031.mp3"]];
-
-    audioPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://www.howjsay.com/mp3/you.mp3?1388406111462.52"]];
-    
+  
+    audioPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/f9e54behd4ndrza/empty_sound.mp3?dl=1&token_hash=aAAGKYWFuGt9FsddDMysEmLpAmLxSlNmTHg9MBQkmv-xEca"]];
     
     [audioPlayer setShouldAutoplay:NO];
     [audioPlayer setControlStyle: MPMovieControlStyleEmbedded];
     audioPlayer.view.hidden = YES;
     [audioPlayer setRepeatMode:MPMovieRepeatModeOne];
     [audioPlayer prepareToPlay];
-    
+    [audioPlayer play];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/*
+Allow this receiving remote event from lock screen
+ */
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlTogglePlayPause:
+            NSLog(@"4");
+            break;
+        case UIEventSubtypeRemoteControlPlay:
+            break;
+        case UIEventSubtypeRemoteControlPause:
+            NSLog(@"3");
+            break;
+        case UIEventSubtypeRemoteControlNextTrack:
+            NSLog(@"Press next button on lock screen");
+            [slide next];
+            break;
+        case UIEventSubtypeRemoteControlPreviousTrack:
+            NSLog(@"Press previous button on lock screen");
+            [slide previous];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void) connectWithAccessCode:(NSString *) code
@@ -99,6 +117,31 @@
         //        p.options.WTURLImageViewOptionShowActivityIndicator = 1;
         p.options = WTURLImageViewOptionShowActivityIndicator;
         [screenshot setURL:[NSURL URLWithString:(NSString *)slideInfo[@"currentSlideUrl"]] withPreset:p];
+        
+        Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
+        if (playingInfoCenter) {
+            NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
+            
+            NSURL *imageURL = [NSURL URLWithString:(NSString *)slideInfo[@"currentSlideUrl"]];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                if (imageData == nil) {
+                    return ;
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage: [UIImage imageWithData:imageData]];
+                    
+                    [songInfo setObject:slideInfo[@"title"] forKey:MPMediaItemPropertyTitle];
+                    [songInfo setObject:slideInfo[@"author"] forKey:MPMediaItemPropertyArtist];
+                    [songInfo setObject:slideInfo[@"provider"] forKey:MPMediaItemPropertyAlbumTitle];
+                    [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+                    
+                    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
+                });
+            });
+            
+        }
+        
     }];
     
     [self refreshScreenshot];
@@ -123,22 +166,10 @@
 {
     (!self.lockControl) && [slide previous];
 }
+
 - (IBAction)cmdNext:(id)sender
 {
-    [audioPlayer play];
-    Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
-    
-    if (playingInfoCenter) {
-        NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
-        MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage: [UIImage imageNamed:@"app_icon_960x640.png"]];
-        [songInfo setObject:@"Audio Title" forKey:MPMediaItemPropertyTitle];
-        [songInfo setObject:@"Audio Author" forKey:MPMediaItemPropertyArtist];
-        [songInfo setObject:@"Audio Album" forKey:MPMediaItemPropertyAlbumTitle];
-        [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
-        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
-    }
-//    [audioPlayer pause];
-//    (!self.lockControl) && [slide next];
+    (!self.lockControl) && [slide next];
 }
 
 @end
