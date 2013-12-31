@@ -41,8 +41,11 @@
 		1747F77D178FCF7F00FC2BF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */; };
 		1747F77F178FCF8A00FC2BF9 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */; };
 		174D31CF185F1558003A2E68 /* HelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174D31CE185F1558003A2E68 /* HelpPageViewController.m */; };
+		1768E2701871889700FCA52F /* app_icon_960x640.png in Resources */ = {isa = PBXBuildFile; fileRef = 1768E26F1871889700FCA52F /* app_icon_960x640.png */; };
 		177921E2185E4D7100EF5CE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177921E0185E402300EF5CE2 /* SystemConfiguration.framework */; };
 		177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */; };
+		177CEF5D1870EAA60004D3D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CEF5C1870EAA60004D3D8 /* MediaPlayer.framework */; };
+		1786239F18704460008F2BD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1786239E18704460008F2BD7 /* MobileCoreServices.framework */; };
 		B8D881782BFD43C594ADDCA3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 689CC3BF29074CD88990986D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -121,9 +124,12 @@
 		1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		174D31CD185F1558003A2E68 /* HelpPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpPageViewController.h; sourceTree = "<group>"; };
 		174D31CE185F1558003A2E68 /* HelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpPageViewController.m; sourceTree = "<group>"; };
+		1768E26F1871889700FCA52F /* app_icon_960x640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon_960x640.png; path = Resources/app_icon_960x640.png; sourceTree = "<group>"; };
 		177921E0185E402300EF5CE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		177921E6185E4F8000EF5CE2 /* UIViewController+BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButton.h"; sourceTree = "<group>"; };
 		177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButton.m"; sourceTree = "<group>"; };
+		177CEF5C1870EAA60004D3D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1786239E18704460008F2BD7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		689CC3BF29074CD88990986D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA78B1A00084096AE9E0B1E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -133,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177CEF5D1870EAA60004D3D8 /* MediaPlayer.framework in Frameworks */,
+				1786239F18704460008F2BD7 /* MobileCoreServices.framework in Frameworks */,
 				177921E2185E4D7100EF5CE2 /* SystemConfiguration.framework in Frameworks */,
 				170A8E58178F6F7B00853682 /* CFNetwork.framework in Frameworks */,
 				1747F77F178FCF8A00FC2BF9 /* libiconv.dylib in Frameworks */,
@@ -166,6 +174,7 @@
 		170A8E0B178F59AD00853682 = {
 			isa = PBXGroup;
 			children = (
+				1768E27118719AB800FCA52F /* Images */,
 				1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */,
 				1747F753178FCF1700FC2BF9 /* ZBarSDK */,
 				170A8E55178F6F7200853682 /* libicucore.dylib */,
@@ -189,6 +198,8 @@
 		170A8E16178F59AD00853682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				177CEF5C1870EAA60004D3D8 /* MediaPlayer.framework */,
+				1786239E18704460008F2BD7 /* MobileCoreServices.framework */,
 				177921E0185E402300EF5CE2 /* SystemConfiguration.framework */,
 				1747F77C178FCF7F00FC2BF9 /* QuartzCore.framework */,
 				1747F77A178FCF7500FC2BF9 /* CoreVideo.framework */,
@@ -326,6 +337,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1768E27118719AB800FCA52F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1768E26F1871889700FCA52F /* app_icon_960x640.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,6 +425,7 @@
 				170A8E2E178F59AE00853682 /* Default-568h@2x.png in Resources */,
 				170A8E31178F59AE00853682 /* MainStoryboard_iPhone.storyboard in Resources */,
 				170A8E34178F59AE00853682 /* MainStoryboard_iPad.storyboard in Resources */,
+				1768E2701871889700FCA52F /* app_icon_960x640.png in Resources */,
 				1747F772178FCF1700FC2BF9 /* zbar-back.png in Resources */,
 				1747F773178FCF1700FC2BF9 /* zbar-help.html in Resources */,
 				1747F774178FCF1700FC2BF9 /* zbar-helpicons.png in Resources */,
@@ -564,7 +584,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -589,7 +609,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -601,9 +621,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAA78B1A00084096AE9E0B1E /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qCommander/qCommander-Prefix.pch";
 				INFOPLIST_FILE = "qCommander/qCommander-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
@@ -617,9 +639,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAA78B1A00084096AE9E0B1E /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qCommander/qCommander-Prefix.pch";
 				INFOPLIST_FILE = "qCommander/qCommander-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",

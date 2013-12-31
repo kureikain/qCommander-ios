@@ -12,11 +12,20 @@
 #import "AXControl.h"
 #import <WTURLImageView/WTURLImageView.h>
 
-//typedef enum slide slide;
-//
+#import <MediaPlayer/MPMoviePlayerController.h>
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
+
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface AXRemoteController : UIViewController
 
+@property (nonatomic, retain) MPMoviePlayerController *audioPlayer;
+
+@property (nonatomic, strong) MPNowPlayingInfoCenter * nowPlayingCenter;
 
 @property (nonatomic, strong) IBOutlet UILabel *accessCodeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *connectivityIndicator;
