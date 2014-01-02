@@ -61,4 +61,9 @@
 
 - (IBAction)cmdPrevious:(id)sender;
 - (IBAction)cmdNext:(id)sender;
+- (IBAction)cmdFirst:(id)sender;
+- (IBAction)cmdLast:(id)sender;
+
+
+
 @end

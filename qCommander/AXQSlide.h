@@ -31,8 +31,8 @@ typedef void (^ FinishLoadSlide)(NSDictionary *);
 - (BOOL) jump:(int) number;
 - (BOOL) next;
 - (BOOL) previous;
-- (BOOL) begin;
-- (BOOL) end;
+- (BOOL) first;
+- (BOOL) last;
 
 - (BOOL) getConnectionStatus;
 - (BOOL) connect;

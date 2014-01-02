@@ -135,17 +135,17 @@ Allow this receiving remote event from lock screen
                     {
                         [songInfo setObject:slideInfo[@"title"] forKey:MPMediaItemPropertyTitle];
                     }
-                    if (nil != slideInfo[@"title"])
+                    if (nil != slideInfo[@"author"])
                     {
                         [songInfo setObject:slideInfo[@"author"] forKey:MPMediaItemPropertyArtist];
                     }
-                    if (nil != slideInfo[@"title"])
+                    if (nil != slideInfo[@"provider"])
                     {
                         [songInfo setObject:slideInfo[@"provider"] forKey:MPMediaItemPropertyAlbumTitle];
                     }
                     if (nil != slideInfo[@"title"])
                     {
-                    [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+                        [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
                     }
                    
                     @try {
@@ -188,6 +188,14 @@ Allow this receiving remote event from lock screen
 - (IBAction)cmdNext:(id)sender
 {
     (!self.lockControl) && [slide next];
+}
+
+- (IBAction)cmdFirst:(id)sender {
+    (!self.lockControl) && [slide first];
+}
+
+- (IBAction)cmdLast:(id)sender {
+    (!self.lockControl) && [slide last];
 }
 
 @end

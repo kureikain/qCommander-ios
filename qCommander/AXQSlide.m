@@ -71,13 +71,17 @@
     return TRUE;
 }
 
-- (BOOL) begin
+- (BOOL) first
 {
+    Firebase* nameRef = [[Firebase alloc] initWithUrl:[self genCmdUri]];
+    [nameRef setValue:@{@"cmd": @"first"}];
     return TRUE;
 }
 
-- (BOOL) end
+- (BOOL) last
 {
+    Firebase* nameRef = [[Firebase alloc] initWithUrl:[self genCmdUri]];
+    [nameRef setValue:@{@"cmd": @"last"}];
     return TRUE;
 }
 

@@ -33,7 +33,7 @@
 - (void) setUpEventHandler
 {
     [self.accessCodeField setDelegate:self];
-    [self.accessCodeField setKeyboardType:UIKeyboardTypePhonePad];
+    [self.accessCodeField setKeyboardType:UIKeyboardTypeNamePhonePad];
 }
 
 - (void) setUpZbar
