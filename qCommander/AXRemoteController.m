@@ -22,6 +22,7 @@
             ,slide
             , slideTitle
             , screenshot
+            , browserConnectStatus
 
 ,audioPlayer
 ;
@@ -112,6 +113,16 @@ Allow this receiving remote event from lock screen
     [self.accessCodeLabel setText:code];
     slide = [[AXQSlide alloc] initWithToken:code andUrl:@"" whenCompletion:^(NSDictionary * slideInfo) {
         NSLog(@"Data change");
+        
+        if ([(NSArray *)[slideInfo objectForKey:@"connection"] lastObject] != NULL) {
+            if (self.browserConnectStatus == offline) {
+                self.browserConnectStatus = online;
+                //Let user know
+                UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                [a show];
+            }
+        }
+        
         [slideTitle setText:slideInfo[@"title"]];
         WTURLImageViewPreset *p = [[WTURLImageViewPreset alloc] init];
         //        p.options.WTURLImageViewOptionShowActivityIndicator = 1;
@@ -160,12 +171,23 @@ Allow this receiving remote event from lock screen
             
         }
         
-    }];
-    [slide runWhenDisconnect:^BOOL() {
-        NSLog(@"Disconnect");
+    } whenDisconnect: ^ BOOL(NSDictionary * s) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser disconnected. Check browser and bookmarklet" message:@"You cannot control until connection is restored." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+            
+            [a show];
+            browserConnectStatus = offline;
+        });
         return false;
     }];
+    
     [self refreshScreenshot];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        //
+    }
 }
 
 - (void) refreshScreenshot
@@ -176,7 +198,7 @@ Allow this receiving remote event from lock screen
         p.options = WTURLImageViewOptionShowActivityIndicator;
         [screenshot setURL:[NSURL URLWithString:url] withPreset:p];
     }];
-    
+
 }
 
 - (IBAction)toggleControlLock:(id)sender {
@@ -185,20 +207,20 @@ Allow this receiving remote event from lock screen
 
 - (IBAction)cmdPrevious:(id)sender
 {
-    (!self.lockControl) && [slide previous];
+    (!self.lockControl && browserConnectStatus == online) && [slide previous];
 }
 
 - (IBAction)cmdNext:(id)sender
 {
-    (!self.lockControl) && [slide next];
+    (!self.lockControl && browserConnectStatus == online) && [slide next];
 }
 
 - (IBAction)cmdFirst:(id)sender {
-    (!self.lockControl) && [slide first];
+    (!self.lockControl && browserConnectStatus == online) && [slide first];
 }
 
 - (IBAction)cmdLast:(id)sender {
-    (!self.lockControl) && [slide last];
+    (!self.lockControl && browserConnectStatus == online) && [slide last];
 }
 
 @end

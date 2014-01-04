@@ -9,6 +9,7 @@
 #import "AXQSlide.h"
 
 @interface AXQSlide ()
+@property BOOL connectionStatus;
 
 @end
 
@@ -18,7 +19,7 @@
 
 - (BOOL) getConnectionStatus
 {
-    return TRUE;
+    return self.connectionStatus;
 }
 
 - (BOOL) connect
@@ -134,16 +135,24 @@
     return TRUE;
 }
 
-- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock
+- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock onDisconnect:(BOOL (^)(NSDictionary *)) block
 {
     Firebase* slideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info"]];
     [slideRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         if(snapshot.value == [NSNull null]) {
             NSLog(@"Not data yet");
+            self.connectionStatus = NO;
         } else {
             NSLog(@"Screenshot URL %@", (NSString *)snapshot.value);
             @try {
-                completionBlock((NSDictionary *)snapshot.value);
+                NSDictionary * s = (NSDictionary *)snapshot.value;
+                if ([(NSArray *)[s objectForKey:@"connection"] lastObject] == NULL) {
+                    self.connectionStatus = NO;
+                    block(s);
+                } else {
+                    self.connectionStatus = YES;
+                    completionBlock(s);
+                }
             }
             @catch (NSException* e) {
                 NSLog(@"Warning: Cannot load Screenshot");
@@ -156,19 +165,13 @@
     return TRUE;
 }
 
-- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock
+- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock whenDisconnect:(BOOL (^)(NSDictionary *)) block
 {
     self = [self initWithToken:code andUrl:@""];
     if (self == nil) {
         
     }
-    [self finishWithBlock:completionBlock];
-    return self;
-}
-
-- (AXQSlide * ) runWhenDisconnect:(BOOL()) block
-{
-    block();
+    [self finishWithBlock:completionBlock onDisconnect:block];
     return self;
 }
 

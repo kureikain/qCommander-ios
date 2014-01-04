@@ -21,7 +21,12 @@
 #import <MediaPlayer/MPMediaItem.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface AXRemoteController : UIViewController
+typedef enum  {
+    online,
+    offline
+} QSConnectionStatus;
+
+@interface AXRemoteController : UIViewController <UIAlertViewDelegate>
 
 @property (nonatomic, retain) MPMoviePlayerController *audioPlayer;
 
@@ -39,6 +44,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *slideTitle;
 
+@property QSConnectionStatus browserConnectStatus;
 
 /*
  Initiate connection to this slideshow

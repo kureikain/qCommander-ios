@@ -47,12 +47,6 @@ typedef void (^ FinishLoadSlide)(NSDictionary *);
  */
 - (NSString *) dataKey:(NSString *)key;
 
-/*
- Setup callback once slide info load or change
- */
-- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock;
+- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock whenDisconnect:(BOOL (^)(NSDictionary *)) block;
 
-- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock ;
-
-- (AXQSlide * ) runWhenDisconnect:(BOOL (^)(void)) block;
 @end
