@@ -165,4 +165,11 @@
     [self finishWithBlock:completionBlock];
     return self;
 }
+
+- (AXQSlide * ) runWhenDisconnect:(BOOL()) block
+{
+    block();
+    return self;
+}
+
 @end

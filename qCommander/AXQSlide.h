@@ -53,4 +53,6 @@ typedef void (^ FinishLoadSlide)(NSDictionary *);
 - (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock;
 
 - (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock ;
+
+- (AXQSlide * ) runWhenDisconnect:(BOOL (^)(void)) block;
 @end

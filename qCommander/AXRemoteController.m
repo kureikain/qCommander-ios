@@ -161,7 +161,10 @@ Allow this receiving remote event from lock screen
         }
         
     }];
-    
+    [slide runWhenDisconnect:^BOOL() {
+        NSLog(@"Disconnect");
+        return false;
+    }];
     [self refreshScreenshot];
 }
 
