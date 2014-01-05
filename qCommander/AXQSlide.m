@@ -27,6 +27,9 @@
     return TRUE;
 }
 
+/*
+ @deprecated
+ */
 - (BOOL) loadScreenshotWithCallback:(UpdateScreenshotBlock) updateBlock;
 {
     Firebase* currentSlideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info/currentSlideUrl"]];
@@ -50,10 +53,10 @@
     return TRUE;
 }
 
-- (BOOL) jump:(int) number
+- (BOOL) jump:(NSNumber *) number
 {
     Firebase* nameRef = [[Firebase alloc] initWithUrl:[self genCmdUri]];
-    [nameRef setValue:@{@"cmd": @"jump", @"number": @"1"}];
+    [nameRef setValue:@{@"cmd": @"jump", @"number": number}];
     return TRUE;
 }
 
@@ -138,15 +141,17 @@
 - (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock onDisconnect:(BOOL (^)(NSDictionary *)) block
 {
     Firebase* slideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info"]];
+
     [slideRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         if(snapshot.value == [NSNull null]) {
             NSLog(@"Not data yet");
             self.connectionStatus = NO;
         } else {
-            NSLog(@"Screenshot URL %@", (NSString *)snapshot.value);
             @try {
                 NSDictionary * s = (NSDictionary *)snapshot.value;
-                if ([(NSArray *)[s objectForKey:@"connection"] lastObject] == NULL) {
+                NSLog(@"Snapshop data: %@", s);
+                NSArray * conn = (NSArray *)s[@"connection"];
+                if (conn == nil) {
                     self.connectionStatus = NO;
                     block(s);
                 } else {

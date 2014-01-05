@@ -23,6 +23,7 @@
             , slideTitle
             , screenshot
             , browserConnectStatus
+            , slideJumper
 
 ,audioPlayer
 ;
@@ -69,6 +70,9 @@
     //UI setup
     [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+    [slideJumper setContinuous:NO];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,26 +118,39 @@ Allow this receiving remote event from lock screen
 
 - (void) connectWithAccessCode:(NSString *) code
 {
-    [self.accessCodeLabel setText:code];
     slide = [[AXQSlide alloc] initWithToken:code andUrl:@"" whenCompletion:^(NSDictionary * slideInfo) {
         NSLog(@"Data change");
         
-        if ([(NSArray *)[slideInfo objectForKey:@"connection"] lastObject] != NULL) {
+        if ([slideInfo objectForKey:@"connection" ] != nil) {
             if (self.browserConnectStatus == offline) {
                 self.browserConnectStatus = online;
-                //Let user know
-                UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
-                [a show];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [self.connectivityIndicator setBackgroundColor:[UIColor colorWithRed:81/255.0f green:192/255.0f blue:212/255.0f alpha:0.9f]];
+                    [self.connectivityIndicator setText:@"Connected"];
+                    
+                    //Let user know
+                    UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                    [a show];
+                });
             }
         }
         
-        [slideTitle setText:slideInfo[@"title"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.accessCodeLabel setText:[NSString stringWithFormat:@"Token: %@", code]];
+            
+            [slideTitle setText:slideInfo[@"title"]];
+            [slideJumper setMaximumValue:[(NSString* )slideInfo[@"quantity"] floatValue]];
+            [slideJumper setValue:[(NSString* )slideInfo[@"currentSlideNumber"] floatValue]];
+        });
+        
         WTURLImageViewPreset *p = [[WTURLImageViewPreset alloc] init];
         //        p.options.WTURLImageViewOptionShowActivityIndicator = 1;
         p.options = WTURLImageViewOptionShowActivityIndicator;
         [screenshot setURL:[NSURL URLWithString:(NSString *)slideInfo[@"currentSlideUrl"]] withPreset:p];
         
         Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
+        
         if (playingInfoCenter) {
             NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
             
@@ -172,7 +189,6 @@ Allow this receiving remote event from lock screen
                     
                 });
             });
-            
         }
         
     } whenDisconnect: ^ BOOL(NSDictionary * s) {
@@ -181,28 +197,18 @@ Allow this receiving remote event from lock screen
             
             [a show];
             browserConnectStatus = offline;
+            
+            [self.connectivityIndicator setBackgroundColor:[UIColor colorWithRed:245/255.0f green:111/255.0f blue:108/255.0f alpha:0.9f]];
+            [self.connectivityIndicator setText:@"Disconnected"];
         });
         return false;
     }];
-    
-    [self refreshScreenshot];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
         //
     }
-}
-
-- (void) refreshScreenshot
-{
-    [slide loadScreenshotWithCallback: ^(NSString *url ) {
-        WTURLImageViewPreset *p = [[WTURLImageViewPreset alloc] init];
-//        p.options.WTURLImageViewOptionShowActivityIndicator = 1;
-        p.options = WTURLImageViewOptionShowActivityIndicator;
-        [screenshot setURL:[NSURL URLWithString:url] withPreset:p];
-    }];
-
 }
 
 - (IBAction)toggleControlLock:(id)sender {
@@ -225,6 +231,10 @@ Allow this receiving remote event from lock screen
 
 - (IBAction)cmdLast:(id)sender {
     (!self.lockControl && browserConnectStatus == online) && [slide last];
+}
+
+- (IBAction)slideMove:(id)sender {
+    (!self.lockControl && browserConnectStatus == online) && [slide jump:[NSNumber numberWithInt:round(self.slideJumper.value)]];
 }
 
 @end

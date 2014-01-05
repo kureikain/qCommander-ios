@@ -28,7 +28,7 @@ typedef void (^ FinishLoadSlide)(NSDictionary *);
 /*
  Jump to a specified page
  */
-- (BOOL) jump:(int) number;
+- (BOOL) jump:(NSNumber *) number;
 - (BOOL) next;
 - (BOOL) previous;
 - (BOOL) first;

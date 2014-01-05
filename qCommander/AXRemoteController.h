@@ -43,6 +43,8 @@ typedef enum  {
 @property (weak, nonatomic) IBOutlet WTURLImageView *screenshot;
 
 @property (strong, nonatomic) IBOutlet UILabel *slideTitle;
+@property (strong, nonatomic) IBOutlet UISlider *slideJumper;
+
 
 @property QSConnectionStatus browserConnectStatus;
 
@@ -50,11 +52,6 @@ typedef enum  {
  Initiate connection to this slideshow
  */
 - (void) connectWithAccessCode:(NSString *) code;
-
-/*
- Update current screenshot to phone
- */
-- (void) refreshScreenshot;
 
 /*
  Action button
@@ -70,6 +67,7 @@ typedef enum  {
 - (IBAction)cmdFirst:(id)sender;
 - (IBAction)cmdLast:(id)sender;
 
+- (IBAction)slideMove:(id)sender;
 
 
 @end
