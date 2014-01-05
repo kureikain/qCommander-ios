@@ -12,4 +12,5 @@
 
 - (IBAction)backButton:(UIStoryboardSegue *)sender;
 
+- (void)setTitle:(NSString *)title;
 @end

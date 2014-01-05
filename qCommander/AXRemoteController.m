@@ -72,6 +72,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
     [slideJumper setContinuous:NO];
+    [self setTitle:[NSString stringWithFormat:@"Slide: %@", slide.token]];
 
 }
 
