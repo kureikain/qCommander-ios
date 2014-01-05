@@ -28,9 +28,10 @@
     if (!titleView) {
         titleView = [[UILabel alloc] initWithFrame:CGRectZero];
         titleView.backgroundColor = [UIColor clearColor];
-        titleView.font = [UIFont boldSystemFontOfSize:20.0];
+//        titleView.font = [UIFont boldSystemFontOfSize:20.0];
         titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
         titleView.textColor = [UIColor whiteColor]; // Change to desired color
+        [titleView setFont:[UIFont fontWithName:@"Roboto Medium" size:12]];
         self.navigationItem.titleView = titleView;
     }
     titleView.text = title;
@@ -45,7 +46,9 @@
     [self setUpZbar];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
     [self setTitle:@"QSlider"];
+    
     NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
     if ([[ver objectAtIndex:0] intValue] >= 7) {
         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:90/255.0f green:154/255.0f blue:168/255.0f alpha:0.9f];

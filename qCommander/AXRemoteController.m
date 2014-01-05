@@ -65,6 +65,10 @@
     [audioPlayer setRepeatMode:MPMovieRepeatModeOne];
     [audioPlayer prepareToPlay];
     [audioPlayer play];
+    
+    //UI setup
+    [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
