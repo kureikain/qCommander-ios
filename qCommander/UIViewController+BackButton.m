@@ -28,10 +28,10 @@
     if (!titleView) {
         titleView = [[UILabel alloc] initWithFrame:CGRectZero];
         titleView.backgroundColor = [UIColor clearColor];
-        //        titleView.font = [UIFont boldSystemFontOfSize:20.0];
+        titleView.font = [UIFont boldSystemFontOfSize:20.0];
         titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
         titleView.textColor = [UIColor whiteColor]; // Change to desired color
-        [titleView setFont:[UIFont fontWithName:@"Roboto Medium" size:12]];
+//        titleView.font = [UIFont fontWithName:@"Roboto Medium" size:18.0f];
         self.navigationItem.titleView = titleView;
     }
     titleView.text = title;
