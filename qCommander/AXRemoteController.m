@@ -24,6 +24,7 @@
             , screenshot
             , browserConnectStatus
             , slideJumper
+            , currentSlideNumberIndicator
 
 ,audioPlayer
 ;
@@ -70,10 +71,19 @@
     //UI setup
     [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-
+    
+    //Remove the title of back button. only chevron icon.
+    self.navigationController.navigationBar.topItem.title = @" ";
+    
     [slideJumper setContinuous:NO];
     [self setTitle:[NSString stringWithFormat:@"Slide: %@", slide.token]];
-
+    
+    currentSlideNumberIndicator.layer.borderColor = [UIColor redColor].CGColor;
+    currentSlideNumberIndicator.layer.borderWidth = 1.0;
+    CALayer *imageLayer = currentSlideNumberIndicator.layer;
+    [imageLayer setCornerRadius:round(currentSlideNumberIndicator.frame.size.width/2)];
+    [imageLayer setBorderWidth:1];
+    [imageLayer setMasksToBounds:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -236,6 +246,12 @@ Allow this receiving remote event from lock screen
 
 - (IBAction)slideMove:(id)sender {
     (!self.lockControl && browserConnectStatus == online) && [slide jump:[NSNumber numberWithInt:round(self.slideJumper.value)]];
+    
+    int pos = round(320/self.slideJumper.maximumValue * self.slideJumper.value);
+    [currentSlideNumberIndicator setText:[NSString stringWithFormat:@"%.0f", round(self.slideJumper.value)]];
+    
+    [currentSlideNumberIndicator setCenter:CGPointMake(pos, currentSlideNumberIndicator.center.y)];
+    
 }
 
 @end

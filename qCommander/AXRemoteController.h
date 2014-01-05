@@ -20,6 +20,7 @@
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
 #import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>"
 
 typedef enum  {
     online,
@@ -47,6 +48,8 @@ typedef enum  {
 
 
 @property QSConnectionStatus browserConnectStatus;
+
+@property (strong, nonatomic) IBOutlet UILabel *currentSlideNumberIndicator;
 
 /*
  Initiate connection to this slideshow
