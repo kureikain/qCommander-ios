@@ -57,7 +57,7 @@
     //initialize our audio player
 //    audioPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://www.cocoanetics.com/files/Cocoanetics_031.mp3"]];
   
-    audioPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/f9e54behd4ndrza/empty_sound.mp3?dl=1&token_hash=aAAGKYWFuGt9FsddDMysEmLpAmLxSlNmTHg9MBQkmv-xEca"]];
+    audioPlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/ap84sy8h47r48ra/empty.wav?dl=1&token_hash=AAGkuxjDHGK-MUefkdmSAhlUj0NLLtX1gE7cLXnLeKkOyw"]];
     
     [audioPlayer setShouldAutoplay:NO];
     [audioPlayer setControlStyle: MPMovieControlStyleEmbedded];

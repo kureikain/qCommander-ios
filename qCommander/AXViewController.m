@@ -21,6 +21,22 @@
 @synthesize firebase, reader;
 @synthesize accessCodeField;
 
+- (void)setTitle:(NSString *)title
+{
+    [super setTitle:title];
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    if (!titleView) {
+        titleView = [[UILabel alloc] initWithFrame:CGRectZero];
+        titleView.backgroundColor = [UIColor clearColor];
+        titleView.font = [UIFont boldSystemFontOfSize:20.0];
+        titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+        titleView.textColor = [UIColor whiteColor]; // Change to desired color
+        self.navigationItem.titleView = titleView;
+    }
+    titleView.text = title;
+    [titleView sizeToFit];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,6 +44,16 @@
     [self bootstrapFirebase];
     [self setUpZbar];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    [self setTitle:@"QSlider"];
+    NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
+    if ([[ver objectAtIndex:0] intValue] >= 7) {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:90/255.0f green:154/255.0f blue:168/255.0f alpha:0.9f];
+        self.navigationController.navigationBar.translucent = NO;
+//        self.navigationController.navigationController.
+    }else {
+        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1 green:126 blue:186 alpha:0.9];
+    }
 }
 
 - (void) setUpEventHandler
