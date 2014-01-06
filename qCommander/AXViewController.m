@@ -33,13 +33,13 @@
     [self setTitle:@"QSlider"];
     
     NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
-    if ([[ver objectAtIndex:0] intValue] >= 7) {
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:90/255.0f green:154/255.0f blue:168/255.0f alpha:0.9f];
-        self.navigationController.navigationBar.translucent = NO;
-//        self.navigationController.navigationController.
-    }else {
-        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1 green:126 blue:186 alpha:0.9];
-    }
+//    if ([[ver objectAtIndex:0] intValue] >= 7) {
+//        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:90/255.0f green:154/255.0f blue:168/255.0f alpha:0.9f];
+//        self.navigationController.navigationBar.translucent = NO;
+////        self.navigationController.navigationController.
+//    }else {
+//        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1 green:126 blue:186 alpha:0.9];
+//    }
 }
 
 - (void) setUpEventHandler
@@ -165,7 +165,15 @@
 - (IBAction)scanToken:(id)sender {
     _scanningCode = FALSE;
     [self presentViewController:reader animated:YES completion:^() {
+        NSLog(@"Completion scan. Check the result is in progress");
         _scanningCode = TRUE;
+        if (![reader isBeingDismissed])
+        {
+            [reader dismissViewControllerAnimated:YES completion:^() {
+                NSLog(@"%@",@"Succesfully to find the image");
+            }];
+        }
+        
     }];
 }
 
@@ -181,21 +189,19 @@
     if (_scanningCode) {
         return;
     }
-    _scanningCode = TRUE;
-    [scanner dismissViewControllerAnimated:YES completion:^() {
-        NSLog(@"%@",@"Succesfully to find the image");
-    }];
     
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
     
     ZBarSymbol *symbol = nil;
+    BOOL validResult = NO;
     for (symbol in results) {
         @try {
             NSLog(@"Access Code Is: %@", symbol.data);
             NSData *data = [symbol.data dataUsingEncoding:NSUTF8StringEncoding];
             NSError * jsonParsingError;
             NSDictionary *a = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
-            if (nil == jsonParsingError) {
+            if (nil == jsonParsingError && [a objectForKey:@"token"] != nil) {
+                validResult = YES;
                 [self foundAccesCode:(NSString *)[a objectForKey:@"token"] withURL:(NSString *)[a objectForKey:@"url"]];
                 break; //Get the 1st one
             }
@@ -208,6 +214,13 @@
             
         }
     }
+    if (!validResult) {
+        dispatch_async(dispatch_get_main_queue(), ^ () {
+            UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Invalid QR Code." message:@"Please scan correct QR Code for QSlide." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+            [a show];
+        });
+    }
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
