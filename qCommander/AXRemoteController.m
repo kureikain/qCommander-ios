@@ -68,22 +68,25 @@
     [audioPlayer prepareToPlay];
     [audioPlayer play];
     
-    //UI setup
+    
+    //UI setup and style for the app
     [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:40/255.0f green:209/255.0f blue:119/255.0f alpha:1.0f];
     
     //Remove the title of back button. only chevron icon.
     self.navigationController.navigationBar.topItem.title = @" ";
     
     [slideJumper setContinuous:NO];
-    [self setTitle:[NSString stringWithFormat:@"Slide: %@", slide.token]];
+    [self setTitle:[NSString stringWithFormat:@"Connected: %@", slide.token]];
     
-    currentSlideNumberIndicator.layer.borderColor = [UIColor redColor].CGColor;
-    currentSlideNumberIndicator.layer.borderWidth = 1.0;
-    CALayer *imageLayer = currentSlideNumberIndicator.layer;
-    [imageLayer setCornerRadius:round(currentSlideNumberIndicator.frame.size.width/2)];
-    [imageLayer setBorderWidth:1];
-    [imageLayer setMasksToBounds:YES];
+//    currentSlideNumberIndicator.layer.borderColor = [UIColor colorWithRed:245/255.f green:111/255.0f blue:108/255.0f alpha:1.0f].CGColor;
+//    currentSlideNumberIndicator.layer.borderWidth = 1.0;
+//    CALayer *imageLayer = currentSlideNumberIndicator.layer;
+//    [imageLayer setCornerRadius:round(currentSlideNumberIndicator.frame.size.width/2)];
+//    [imageLayer setBorderWidth:2];
+//    [imageLayer setMasksToBounds:YES];
+    currentSlideNumberIndicator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"slide_pop"]];
+    // End UI Setup
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,6 +156,7 @@ Allow this receiving remote event from lock screen
             [slideTitle setText:slideInfo[@"title"]];
             [slideJumper setMaximumValue:[(NSString* )slideInfo[@"quantity"] floatValue]];
             [slideJumper setValue:[(NSString* )slideInfo[@"currentSlideNumber"] floatValue]];
+            [self setTitle:[NSString stringWithFormat:@"%.0f/%@\n ", round(self.slideJumper.value), slide.quantityOfSlide]];            
         });
         
         WTURLImageViewPreset *p = [[WTURLImageViewPreset alloc] init];
@@ -248,7 +252,7 @@ Allow this receiving remote event from lock screen
     (!self.lockControl && browserConnectStatus == online) && [slide jump:[NSNumber numberWithInt:round(self.slideJumper.value)]];
     
     int pos = round(320/self.slideJumper.maximumValue * self.slideJumper.value);
-    [currentSlideNumberIndicator setText:[NSString stringWithFormat:@"%.0f", round(self.slideJumper.value)]];
+    [currentSlideNumberIndicator setText:[NSString stringWithFormat:@"%.0f/%@\n ", round(self.slideJumper.value), slide.quantityOfSlide]];
     
     [currentSlideNumberIndicator setCenter:CGPointMake(pos, currentSlideNumberIndicator.center.y)];
     

@@ -21,20 +21,19 @@
 }
 
 
-- (void)setTitle:(NSString *)title
-{
-//    [super setTitle:title];
-    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    if (!titleView) {
-        titleView = [[UILabel alloc] initWithFrame:CGRectZero];
-        titleView.backgroundColor = [UIColor clearColor];
-//        titleView.font = [UIFont boldSystemFontOfSize:20.0];
-        titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-        titleView.textColor = [UIColor whiteColor]; // Change to desired color
-        titleView.font = [UIFont fontWithName:@"Roboto Regular" size:25.0f];
-        self.navigationItem.titleView = titleView;
-    }
-    titleView.text = title;
-    [titleView sizeToFit];
-}
+//- (void)setTitle:(NSString *)title
+//{
+////    [super setTitle:title];
+//    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+//    if (!titleView) {
+//        titleView = [[UILabel alloc] initWithFrame:CGRectZero];
+////        titleView.backgroundColor = [UIColor clearColor];
+//        titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+//        titleView.textColor = [UIColor redColor]; // Change to desired color
+//        titleView.font = [UIFont fontWithName:@"Roboto Regular" size:35.0f];
+//        self.navigationItem.titleView = titleView;
+//    }
+//    titleView.text = title;
+//    [titleView sizeToFit];
+//}
 @end
