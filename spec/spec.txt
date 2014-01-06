@@ -1,0 +1,28 @@
+Phone: P
+Browser: B
+
+
+
+# 1
+
+Init B
+Init P
+
+Connect
+
+# 2
+
+Init P
+Init B
+Connect
+
+#3 Resume
+B is still running
+P try to re-connect 
+
+#4 Result
+P is still connecting
+B is lost 
+
+#5 Out of sync
+

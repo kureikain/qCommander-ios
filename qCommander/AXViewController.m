@@ -63,9 +63,9 @@
     CALayer* layer = [jumboLbl layer];
     CALayer *bottomBorder = [CALayer layer];
 //    bottomBorder.borderColor = [UIColor darkGrayColor].CGColor;
-    bottomBorder.borderWidth = 1;
-    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-1, layer.frame.size.width, 1);
-    [bottomBorder setBorderColor:[UIColor colorWithRed:72/255.0f green:74/255.0f blue:86/255.0f alpha:0.8f].CGColor];
+    bottomBorder.borderWidth = 2;
+    bottomBorder.frame = CGRectMake(0, -2, layer.frame.size.width, 2);
+    [bottomBorder setBorderColor:[UIColor colorWithRed:71/255.0f green:74/255.0f blue:86/255.0f alpha:0.8f].CGColor];
     [layer addSublayer:bottomBorder];
     
 }
