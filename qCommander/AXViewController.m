@@ -13,13 +13,14 @@
 @interface AXViewController ()
 {
     BOOL  _scanningCode;
+
 }
 @end
 
 @implementation AXViewController
 
 @synthesize firebase, reader;
-@synthesize accessCodeField;
+@synthesize accessCodeField, foundValidToken, tutorialBtn, qrCodeBtn, connectBtn, jumboLbl;
 
 - (void)viewDidLoad
 {
@@ -33,6 +34,7 @@
     [self setTitle:@"QSlider"];
     
     NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
+    
 //    if ([[ver objectAtIndex:0] intValue] >= 7) {
 //        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:90/255.0f green:154/255.0f blue:168/255.0f alpha:0.9f];
 //        self.navigationController.navigationBar.translucent = NO;
@@ -40,6 +42,32 @@
 //    }else {
 //        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1 green:126 blue:186 alpha:0.9];
 //    }
+    
+    //Setup UI
+    CALayer *imageLayer = tutorialBtn.layer;
+    [imageLayer setCornerRadius:3];
+//    [imageLayer setBorderWidth:2];
+    [imageLayer setMasksToBounds:YES];
+    
+    CALayer *imageLayer2 = connectBtn.layer;
+    [imageLayer2 setCornerRadius:5];
+    //    [imageLayer setBorderWidth:2];
+    [imageLayer2 setMasksToBounds:YES];
+    
+    CALayer *imageLayer3 = qrCodeBtn.layer;
+    [imageLayer3 setCornerRadius:5];
+    [imageLayer3 setBorderWidth:7];
+    [imageLayer3 setBorderColor:(__bridge CGColorRef)([UIColor colorWithRed:78/255.0f green:122/255.0f blue:189/255.0f alpha:1.0f])];
+    [imageLayer3 setMasksToBounds:YES];
+    
+    CALayer* layer = [jumboLbl layer];
+    CALayer *bottomBorder = [CALayer layer];
+//    bottomBorder.borderColor = [UIColor darkGrayColor].CGColor;
+    bottomBorder.borderWidth = 1;
+    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-1, layer.frame.size.width, 1);
+    [bottomBorder setBorderColor:[UIColor colorWithRed:72/255.0f green:74/255.0f blue:86/255.0f alpha:0.8f].CGColor];
+    [layer addSublayer:bottomBorder];
+    
 }
 
 - (void) setUpEventHandler
@@ -164,16 +192,18 @@
 
 - (IBAction)scanToken:(id)sender {
     _scanningCode = FALSE;
+    foundValidToken = NO;
     [self presentViewController:reader animated:YES completion:^() {
         NSLog(@"Completion scan. Check the result is in progress");
-        _scanningCode = TRUE;
-        if (![reader isBeingDismissed])
-        {
-            [reader dismissViewControllerAnimated:YES completion:^() {
-                NSLog(@"%@",@"Succesfully to find the image");
-            }];
+        if (foundValidToken) {
+            _scanningCode = TRUE;
+            if (![reader isBeingDismissed])
+            {
+                [reader dismissViewControllerAnimated:YES completion:^() {
+                NSLog(@"%@",@"Close the scanner");
+                }];
+            }
         }
-        
     }];
 }
 
@@ -193,7 +223,6 @@
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
     
     ZBarSymbol *symbol = nil;
-    BOOL validResult = NO;
     for (symbol in results) {
         @try {
             NSLog(@"Access Code Is: %@", symbol.data);
@@ -201,7 +230,7 @@
             NSError * jsonParsingError;
             NSDictionary *a = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
             if (nil == jsonParsingError && [a objectForKey:@"token"] != nil) {
-                validResult = YES;
+                foundValidToken = YES;
                 [self foundAccesCode:(NSString *)[a objectForKey:@"token"] withURL:(NSString *)[a objectForKey:@"url"]];
                 break; //Get the 1st one
             }
@@ -214,12 +243,22 @@
             
         }
     }
-    if (!validResult) {
+    if (!foundValidToken) {
         dispatch_async(dispatch_get_main_queue(), ^ () {
             UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Invalid QR Code." message:@"Please scan correct QR Code for QSlide." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
             [a show];
         });
+    } else {
+        _scanningCode = TRUE;
+        if (![reader isBeingDismissed])
+        {
+            [reader dismissViewControllerAnimated:YES completion:^() {
+                NSLog(@"%@",@"Close the scanner");
+            }];
+        }
+
     }
+    
     
 }
 

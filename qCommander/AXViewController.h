@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 #import "ZBarSDK.h"
-#import "MMDrawerController/MMDrawerController.h"
+//#import "MMDrawerController/MMDrawerController.h"
 #import "AXRemoteController.h"
 
 @interface AXViewController : UIViewController <ZBarReaderDelegate, UITextFieldDelegate>
@@ -22,7 +22,15 @@
 // Bar Code scanner
 @property (strong) ZBarReaderViewController *reader;
 
+@property BOOL foundValidToken;
+
 @property (weak, nonatomic) IBOutlet UILabel *tokenLbl;
+
+@property (strong, nonatomic) IBOutlet UIButton *tutorialBtn;
+@property (strong, nonatomic) IBOutlet UIButton *connectBtn;
+@property (strong, nonatomic) IBOutlet UIButton *qrCodeBtn;
+
+@property (strong, nonatomic) IBOutlet UILabel *jumboLbl;
 
 - (IBAction)cmdNext:(id)sender;
 

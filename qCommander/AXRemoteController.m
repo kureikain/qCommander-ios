@@ -68,6 +68,7 @@
     [audioPlayer prepareToPlay];
     [audioPlayer play];
     
+    [self setUpGetsure];
     
     //UI setup and style for the app
     [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
@@ -87,6 +88,22 @@
 //    [imageLayer setMasksToBounds:YES];
     currentSlideNumberIndicator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"slide_pop"]];
     // End UI Setup
+}
+
+- (void) setUpGetsure
+{
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc]         initWithTarget:self action:@selector(swipeLeft)];
+    swipeLeft.numberOfTouchesRequired = 1;
+    swipeLeft.direction=UISwipeGestureRecognizerDirectionLeft;
+    swipeLeft.delaysTouchesBegan = 0.5f;
+    swipeLeft.delaysTouchesEnded = 0.5f;
+    [self.screenshot addGestureRecognizer:swipeLeft];
+
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc]         initWithTarget:self action:@selector(swipeRight)];
+    swipeRight.numberOfTouchesRequired = 1;
+    swipeRight.direction=UISwipeGestureRecognizerDirectionRight;
+    [self.screenshot addGestureRecognizer:swipeRight];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -215,6 +232,7 @@ Allow this receiving remote event from lock screen
             
             [self.connectivityIndicator setBackgroundColor:[UIColor colorWithRed:245/255.0f green:111/255.0f blue:108/255.0f alpha:0.9f]];
             [self.connectivityIndicator setText:@"Disconnected"];
+            [self setTitle:@"Disconnected"];
         });
         return false;
     }];
@@ -225,6 +243,18 @@ Allow this receiving remote event from lock screen
         //
     }
 }
+
+- (void) swipeLeft
+{
+        (!self.lockControl && browserConnectStatus == online) && [slide next];
+
+}
+- (void) swipeRight
+{
+        (!self.lockControl && browserConnectStatus == online) && [slide previous];
+
+}
+
 
 - (IBAction)toggleControlLock:(id)sender {
     self.lockControl = !self.lockControl;

@@ -150,6 +150,10 @@
             @try {
                 NSDictionary * s = (NSDictionary *)snapshot.value;
                 NSLog(@"Snapshop data: %@", s);
+                NSNumber * quantity = (NSNumber *)s[@"quantity"];
+                if (quantity != nil) {
+                    self.quantityOfSlide = quantity;
+                }
                 NSArray * conn = (NSArray *)s[@"connection"];
                 if (conn == nil) {
                     self.connectionStatus = NO;

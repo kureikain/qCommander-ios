@@ -51,6 +51,7 @@ typedef enum  {
 
 @property (strong, nonatomic) IBOutlet UILabel *currentSlideNumberIndicator;
 
+
 /*
  Initiate connection to this slideshow
  */
