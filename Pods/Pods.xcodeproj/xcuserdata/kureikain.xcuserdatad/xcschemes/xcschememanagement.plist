@@ -19,21 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MMDrawerController+Storyboard.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MMDrawerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NUI.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-WTExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>159655E98CC349D5B31FC5E3</key>
+		<key>1463019D30654385ADB6086E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>187583D6F90F49C68E2BA8DA</key>
+		<key>4B9F5FA9FF97481D8B68FCDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>579211C505E742DC81BE2600</key>
+		<key>52F4E759D6B547BEAEB9A88E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EFAAEA1FCB244FABEDA628E</key>
+		<key>7DCBB69EA1B24266BB2ABF7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5FB76E6369114893A5B7351E</key>
+		<key>C0A49F89C5484F819493270E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A077FEEDB61E488894383FB6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B997D343F6C047F997B99182</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CC41CF82A80641C0BFFCDE13</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F40C8CC4553D4711A985577D</key>
+		<key>CAB89A3A1A57442EA68FFEC8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B997D343F6C047F997B99182"
+               BlueprintIdentifier = "4B9F5FA9FF97481D8B68FCDC"
                BuildableName = "libPods-WTExtension.a"
                BlueprintName = "Pods-WTExtension"
                ReferencedContainer = "container:Pods.xcodeproj">
