@@ -68,9 +68,13 @@
     [audioPlayer setControlStyle: MPMovieControlStyleEmbedded];
     audioPlayer.view.hidden = YES;
     [audioPlayer setRepeatMode:MPMovieRepeatModeOne];
-    [audioPlayer prepareToPlay];
-    [audioPlayer play];
-    
+    @try {
+        [audioPlayer prepareToPlay];
+        [audioPlayer play];
+    }
+    @catch (NSException *e) {
+        NSLog(@"Check connection");
+    }
     [self setUpGetsure];
     
     //UI setup and style for the app
@@ -81,7 +85,12 @@
     self.navigationController.navigationBar.topItem.title = @" ";
     
     [slideJumper setContinuous:NO];
-    [self setTitle:[NSString stringWithFormat:@"Connected: %@", slide.token]];
+    if (token == nil) {
+        [self setTitle:[NSString stringWithFormat:@"Connecting..."]];
+    } else {
+        [self setTitle:[NSString stringWithFormat:@"Connected: %@", token]];
+    }
+
     
 //    currentSlideNumberIndicator.layer.borderColor = [UIColor colorWithRed:245/255.f green:111/255.0f blue:108/255.0f alpha:1.0f].CGColor;
 //    currentSlideNumberIndicator.layer.borderWidth = 1.0;
@@ -161,24 +170,26 @@ Allow this receiving remote event from lock screen
 
 - (void) prepareConnectTo:(NSString *) code
 {
+    self.token = code;
     if (HUD == nil)
     {
         HUD = [[HTProgressHUD alloc] init];
     }
-    [HUD showInView:self.view];
-    self.token = code;
 }
 
 - (void) connectWithAccessCode:(NSString *) code
 {
+    static int countCommand = 0;
+    countCommand = 0;
+    [HUD showInView:self.view];
     slide = [[AXQSlide alloc] initWithToken:code andUrl:@"" whenCompletion:^(NSDictionary * slideInfo) {
         NSLog(@"Data change");
-        static int countCommand = 0;
+
         if (countCommand == 0) {
-            //This is first time, hide the HUD
-            countCommand += 1;
+            //This is first time valid data coming, hide the HUD
             [HUD hideWithAnimation:YES];
         }
+        countCommand += 1;
         
         if ([slideInfo objectForKey:@"connection" ] != nil) {
             if (self.browserConnectStatus == offline) {
@@ -266,9 +277,7 @@ Allow this receiving remote event from lock screen
         });
         return false;
     } whenFail: ^ BOOL() {
-        [HUD hide];
         dispatch_async(dispatch_get_main_queue(), ^{
-//            [self popView];
             [NSTimer scheduledTimerWithTimeInterval:1.0f
                                              target:self
                                            selector:@selector(popView)
@@ -287,6 +296,7 @@ Allow this receiving remote event from lock screen
 
 - (void) popView
 {
+    [HUD hide];    
     [self.navigationController popViewControllerAnimated:NO];
 
         UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Invalid Slideshow ID" message:@"Please check your slideshow ID. Make sure the bookmarklet is running as well." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];

@@ -141,7 +141,7 @@
 - (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock onDisconnect:(BOOL (^)(NSDictionary *)) block onFail:(BOOL (^)(void)) failBlock
 {
     Firebase* slideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info"]];
-
+    
     [slideRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         if(snapshot.value == [NSNull null]) {
             NSLog(@"Not data yet");
@@ -167,9 +167,6 @@
             @catch (NSException* e) {
                 NSLog(@"Warning: Cannot load Screenshot");
             }
-            //            NSString* firstName = snapshot.value[@"name"][@"first"];
-            //            NSString* lastName = snapshot.value[@"name"][@"last"];
-            //            NSLog(@"User julie's full name is: %@ %@", firstName, lastName);
         }
     }];
     return TRUE;
