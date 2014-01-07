@@ -14,7 +14,9 @@
 
 @implementation AXRemoteController
 
-@synthesize connectivityIndicator
+@synthesize
+            token
+            , connectivityIndicator
             , accessCodeLabel
             , lockControl
             ,nowPlayingCenter
@@ -25,7 +27,8 @@
             , browserConnectStatus
             , slideJumper
             , currentSlideNumberIndicator
-
+            , HUD // progeress hud
+            , rootView //Rootview controller.
 ,audioPlayer
 ;
 
@@ -87,22 +90,31 @@
 //    [imageLayer setBorderWidth:2];
 //    [imageLayer setMasksToBounds:YES];
     currentSlideNumberIndicator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"slide_pop"]];
+    //Disable highlight image
+//    screenshot.adjustsImageWhenHighlighted = NO;
+//    screenshot setHighlighted:<#(BOOL)#>
+//    adjustsImageWhenHighlighted
     // End UI Setup
+    
+    //Init connection
+    [self connectWithAccessCode:self.token];
 }
 
 - (void) setUpGetsure
 {
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc]         initWithTarget:self action:@selector(swipeLeft)];
-    swipeLeft.numberOfTouchesRequired = 1;
-    swipeLeft.direction=UISwipeGestureRecognizerDirectionLeft;
-    swipeLeft.delaysTouchesBegan = 0.5f;
-    swipeLeft.delaysTouchesEnded = 0.5f;
-    [self.screenshot addGestureRecognizer:swipeLeft];
-
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc]         initWithTarget:self action:@selector(swipeRight)];
-    swipeRight.numberOfTouchesRequired = 1;
-    swipeRight.direction=UISwipeGestureRecognizerDirectionRight;
-    [self.screenshot addGestureRecognizer:swipeRight];
+    
+//    
+//    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc]         initWithTarget:self action:@selector(swipeLeft)];
+//    swipeLeft.numberOfTouchesRequired = 1;
+//    swipeLeft.direction=UISwipeGestureRecognizerDirectionLeft;
+//    swipeLeft.delaysTouchesBegan = 0.5f;
+//    swipeLeft.delaysTouchesEnded = 0.5f;
+//    [self.screenshot addGestureRecognizer:swipeLeft];
+//
+//    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc]         initWithTarget:self action:@selector(swipeRight)];
+//    swipeRight.numberOfTouchesRequired = 1;
+//    swipeRight.direction=UISwipeGestureRecognizerDirectionRight;
+//    [self.screenshot addGestureRecognizer:swipeRight];
     
 }
 
@@ -147,10 +159,26 @@ Allow this receiving remote event from lock screen
     }
 }
 
+- (void) prepareConnectTo:(NSString *) code
+{
+    if (HUD == nil)
+    {
+        HUD = [[HTProgressHUD alloc] init];
+    }
+    [HUD showInView:self.view];
+    self.token = code;
+}
+
 - (void) connectWithAccessCode:(NSString *) code
 {
     slide = [[AXQSlide alloc] initWithToken:code andUrl:@"" whenCompletion:^(NSDictionary * slideInfo) {
         NSLog(@"Data change");
+        static int countCommand = 0;
+        if (countCommand == 0) {
+            //This is first time, hide the HUD
+            countCommand += 1;
+            [HUD hideWithAnimation:YES];
+        }
         
         if ([slideInfo objectForKey:@"connection" ] != nil) {
             if (self.browserConnectStatus == offline) {
@@ -163,6 +191,7 @@ Allow this receiving remote event from lock screen
                     //Let user know
                     UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
                     [a show];
+                    [HUD hideWithAnimation:YES];
                 });
             }
         }
@@ -233,8 +262,20 @@ Allow this receiving remote event from lock screen
             [self.connectivityIndicator setBackgroundColor:[UIColor colorWithRed:245/255.0f green:111/255.0f blue:108/255.0f alpha:0.9f]];
             [self.connectivityIndicator setText:@"Disconnected"];
             [self setTitle:@"Disconnected"];
+            [HUD showInView:self.view];
         });
         return false;
+    } whenFail: ^ BOOL() {
+        [HUD hide];
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self popView];
+            [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                             target:self
+                                           selector:@selector(popView)
+                                           userInfo:nil
+                                            repeats:NO];
+        });
+        return TRUE;
     }];
 }
 
@@ -242,6 +283,15 @@ Allow this receiving remote event from lock screen
     if (buttonIndex == 0){
         //
     }
+}
+
+- (void) popView
+{
+    [self.navigationController popViewControllerAnimated:NO];
+
+        UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Invalid Slideshow ID" message:@"Please check your slideshow ID. Make sure the bookmarklet is running as well." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+    
+        [a show];
 }
 
 - (void) swipeLeft
@@ -276,6 +326,29 @@ Allow this receiving remote event from lock screen
 
 - (IBAction)cmdLast:(id)sender {
     (!self.lockControl && browserConnectStatus == online) && [slide last];
+}
+
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender {
+    static CGPoint startLocation;
+    
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        startLocation = [sender locationInView:self.view];
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded) {
+        CGPoint stopLocation = [sender locationInView:self.view];
+        CGFloat dx = stopLocation.x - startLocation.x;
+        CGFloat dy = stopLocation.y - startLocation.y;
+        CGFloat distance = sqrtf(dx*dx + dy*dy );
+        if (distance>65) {
+            CGPoint vel = [sender velocityInView:self.view];
+            if (vel.x < 0) {
+                [self swipeRight];
+            } else {
+                [self swipeLeft];
+            }
+        }
+        NSLog(@"Distance: %f", distance);
+    }
 }
 
 - (IBAction)slideMove:(id)sender {

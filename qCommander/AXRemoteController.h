@@ -20,14 +20,20 @@
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
 #import <AVFoundation/AVFoundation.h>
-#import <QuartzCore/QuartzCore.h>"
+#import <QuartzCore/QuartzCore.h>
+#import <HTProgressHUD/HTProgressHUD.h>
 
+#import "AXViewController.h"
+
+@class AXViewController;
 typedef enum  {
     online,
     offline
 } QSConnectionStatus;
 
 @interface AXRemoteController : UIViewController <UIAlertViewDelegate>
+
+@property (nonatomic, strong) AXViewController* rootView;
 
 @property (nonatomic, retain) MPMoviePlayerController *audioPlayer;
 
@@ -46,11 +52,16 @@ typedef enum  {
 @property (strong, nonatomic) IBOutlet UILabel *slideTitle;
 @property (strong, nonatomic) IBOutlet UISlider *slideJumper;
 
+@property (strong) NSString * token;
 
 @property QSConnectionStatus browserConnectStatus;
-
 @property (strong, nonatomic) IBOutlet UILabel *currentSlideNumberIndicator;
+@property (strong, nonatomic) HTProgressHUD *HUD;
 
+/**
+ Prepare for connection
+ */
+- (void) prepareConnectTo:(NSString *) code;
 
 /*
  Initiate connection to this slideshow
@@ -70,6 +81,8 @@ typedef enum  {
 - (IBAction)cmdNext:(id)sender;
 - (IBAction)cmdFirst:(id)sender;
 - (IBAction)cmdLast:(id)sender;
+
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender;
 
 - (IBAction)slideMove:(id)sender;
 

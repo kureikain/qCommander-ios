@@ -138,7 +138,7 @@
     return TRUE;
 }
 
-- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock onDisconnect:(BOOL (^)(NSDictionary *)) block
+- (BOOL) finishWithBlock:(FinishLoadSlide) completionBlock onDisconnect:(BOOL (^)(NSDictionary *)) block onFail:(BOOL (^)(void)) failBlock
 {
     Firebase* slideRef = [[Firebase alloc] initWithUrl: [self dataKey:@"info"]];
 
@@ -146,6 +146,7 @@
         if(snapshot.value == [NSNull null]) {
             NSLog(@"Not data yet");
             self.connectionStatus = NO;
+            failBlock();
         } else {
             @try {
                 NSDictionary * s = (NSDictionary *)snapshot.value;
@@ -174,13 +175,13 @@
     return TRUE;
 }
 
-- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock whenDisconnect:(BOOL (^)(NSDictionary *)) block
+- (AXQSlide *) initWithToken:(NSString *) code andUrl:(NSString *) aUrl whenCompletion:(FinishLoadSlide) completionBlock whenDisconnect:(BOOL (^)(NSDictionary *)) block whenFail:(BOOL (^)(void)) failBlock
 {
     self = [self initWithToken:code andUrl:@""];
     if (self == nil) {
         
     }
-    [self finishWithBlock:completionBlock onDisconnect:block];
+    [self finishWithBlock:completionBlock onDisconnect:block onFail:failBlock];
     return self;
 }
 

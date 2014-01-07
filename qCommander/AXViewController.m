@@ -262,11 +262,17 @@
     
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    return TRUE;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"connectWithAccessCode"]) {
         AXRemoteController *destViewController = segue.destinationViewController;
-        [destViewController connectWithAccessCode:self.accessCodeField.text];
+        [destViewController prepareConnectTo:self.accessCodeField.text];
+        destViewController.rootView = self;
     }
 }
 
