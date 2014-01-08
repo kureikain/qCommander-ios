@@ -88,7 +88,7 @@
     if (token == nil) {
         [self setTitle:[NSString stringWithFormat:@"Connecting..."]];
     } else {
-        [self setTitle:[NSString stringWithFormat:@"Connected: %@", token]];
+        [self setTitle:[NSString stringWithFormat:@"Connecting: %@", token]];
     }
 
     

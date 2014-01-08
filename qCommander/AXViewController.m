@@ -273,6 +273,9 @@
         AXRemoteController *destViewController = segue.destinationViewController;
         [destViewController prepareConnectTo:self.accessCodeField.text];
         destViewController.rootView = self;
+    } else if ([segue.identifier isEqualToString:@"showHelp"]) {
+        AXHelpViewController *d = segue.destinationViewController;
+        
     }
 }
 

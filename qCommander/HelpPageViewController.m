@@ -9,10 +9,13 @@
 #import "HelpPageViewController.h"
 
 @interface HelpPageViewController ()
-
+{
+}
 @end
 
 @implementation HelpPageViewController
+
+@synthesize pageIndex, titleText, imageFile;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

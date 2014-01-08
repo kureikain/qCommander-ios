@@ -79,6 +79,16 @@
                                 <rect key="frame" x="247" y="511" width="42" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEG-pN-Moe">
+                                <rect key="frame" x="111" y="371" width="159" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="R0W-VX-KmD" kind="push" identifier="showHelp" id="DrI-Rg-dxB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -109,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1525" y="-265"/>
+            <point key="canvasLocation" x="-1243" y="-271"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6FA-br-4d1">
@@ -146,6 +156,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVq-dA-3B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1902" y="330"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="mZf-Rp-bHs">
+            <objects>
+                <pageViewController storyboardIdentifier="HelpContainerView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="R0W-VX-KmD" customClass="AXHelpViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yz3-Gk-VIz"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bx-K3-k4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-887" y="177"/>
         </scene>
         <!--Remote Controller-->
         <scene sceneID="aOX-y3-J67">
@@ -304,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="-677" y="-323"/>
         </scene>
-        <!--View Controller-->
+        <!--Help Page View Controller-->
         <scene sceneID="ZON-kj-AC0">
             <objects>
-                <viewController id="dwS-uJ-aUz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpPageViewController" id="dwS-uJ-aUz" customClass="HelpPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ss4-V4-jFo"/>
                         <viewControllerLayoutGuide type="bottom" id="tcI-Xd-Oik"/>
@@ -320,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dy1-yC-Nuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="-413"/>
+            <point key="canvasLocation" x="-682" y="433"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,7 @@
 #import "ZBarSDK.h"
 //#import "MMDrawerController/MMDrawerController.h"
 #import "AXRemoteController.h"
+#import "AXHelpViewController.h"
 
 @interface AXViewController : UIViewController <ZBarReaderDelegate, UITextFieldDelegate>
 
