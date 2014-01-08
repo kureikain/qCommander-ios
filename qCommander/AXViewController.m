@@ -264,7 +264,10 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    return [self.accessCodeField.text compare:@""];
+    if ([identifier isEqualToString:@"connectWithAccessCode"]) {
+        return [self.accessCodeField.text compare:@""];
+    }
+    return TRUE;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -274,7 +277,7 @@
         [destViewController prepareConnectTo:self.accessCodeField.text];
         destViewController.rootView = self;
     } else if ([segue.identifier isEqualToString:@"showHelp"]) {
-        AXHelpViewController *d = segue.destinationViewController;
+//        AXHelpViewController *d = segue.destinationViewController;
         
     }
 }

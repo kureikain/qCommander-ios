@@ -32,7 +32,7 @@
 
     //Data model
     pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
-    pageImages = @[@"ss", @"ss", @"s", @"ss", @"ss"];
+    pageImages = @[@"page1", @"page2", @"page3", @"page3", @"page4"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpContainerView"];
@@ -48,6 +48,18 @@
     [self addChildViewController:pageViewController];
     [self.view addSubview:pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
+    //Color for page indicator
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self startWalkthrough:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,10 +122,11 @@
     return 0;
 }
 
-- (IBAction)startWalkthrough:(id)sender {
+- (BOOL)startWalkthrough:(id)sender {
     HelpPageViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    return TRUE;
 }
 
 @end

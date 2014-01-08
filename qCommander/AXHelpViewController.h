@@ -10,9 +10,9 @@
 #import "AXHelpViewController.h"
 #import "HelpPageViewController.h"
 
-@interface AXHelpViewController : UIPageViewController <UIPageViewControllerDataSource>
+@interface AXHelpViewController : UIViewController <UIPageViewControllerDataSource>
 
-- (IBAction)startWalkthrough:(id)sender;
+- (BOOL)startWalkthrough:(id)sender;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;
 @property (strong, nonatomic) NSArray *pageImages;
