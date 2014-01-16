@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
             <Locations>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,12 +244,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,12 +260,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,12 +292,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -323,7 +323,7 @@
                   symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
                   moduleName = "qCommander"
                   urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "410689656.358862"
+                  timestampString = "411537945.387047"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -337,7 +337,7 @@
                   symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
                   moduleName = "qCommander"
                   urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "410689656.359098"
+                  timestampString = "411537945.388721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -369,7 +369,7 @@
                   symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
                   moduleName = "qCommander"
                   urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "410689656.359314"
+                  timestampString = "411537945.388952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
@@ -383,7 +383,7 @@
                   symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
                   moduleName = "qCommander"
                   urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "410689656.359742"
+                  timestampString = "411537945.389127"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
@@ -400,12 +400,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -446,12 +446,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410609509.169874"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -492,12 +492,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -543,7 +543,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -554,12 +554,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410609579.839595"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -570,12 +570,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -586,12 +586,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXQSlide.m"
-            timestampString = "410654592.748162"
+            timestampString = "410774001.577435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "-finishWithBlock:onDisconnect:"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-finishWithBlock:onDisconnect:onFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -618,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
             <Locations>
@@ -680,11 +680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
             <Locations>
@@ -726,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -742,11 +742,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -758,12 +758,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410668525.864544"
+            timestampString = "410779405.304942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-setUpGetsure"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-popView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -773,13 +773,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "qCommander/AXRemoteController.m"
-            timestampString = "410667672.413965"
+            filePath = "qCommander/AXViewController.m"
+            timestampString = "410863986.8823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-setUpGetsure"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "-prepareForSegue:sender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "qCommander/AXHelpViewController.m"
+            timestampString = "410864030.567124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
