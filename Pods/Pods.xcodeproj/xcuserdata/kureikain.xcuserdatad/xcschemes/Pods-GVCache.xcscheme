@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52F4E759D6B547BEAEB9A88E"
+               BlueprintIdentifier = "E2F8F3140C1B474D98EA5EDB"
                BuildableName = "libPods-GVCache.a"
                BlueprintName = "Pods-GVCache"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -2,6 +2,7 @@ PODS:
   - AFNetworking (1.3.3)
   - Firebase (1.1.1)
   - GVCache (1.0.1)
+  - HTProgressHUD (0.1.1)
   - WTExtension/UIImage+WTExtension (1.2.1)
   - WTURLImageView (1.1.0):
     - AFNetworking (>= 1.0)
@@ -11,13 +12,15 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 1.0)
   - Firebase (~> 1.1.1)
+  - HTProgressHUD (~> 0.1.1)
   - WTURLImageView (~> 1.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   Firebase: dbe43438045e6208f42d2624b43bc9195fb840f1
   GVCache: dcf482c12f3fdbc6848e4f7b1b7a48dd6af0a1d9
+  HTProgressHUD: 93ef4df8a47fdc03fc6dbc1eea5d6d8cf75ead2d
   WTExtension: 636071786394da7c57e130e7d9274d3c082a1b06
   WTURLImageView: 07fbaad72a1c3ba39e2246fe6a5dbbc93c84a59d
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.29.0

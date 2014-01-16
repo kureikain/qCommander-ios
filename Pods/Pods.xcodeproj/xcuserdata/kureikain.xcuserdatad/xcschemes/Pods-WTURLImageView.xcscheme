@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CAB89A3A1A57442EA68FFEC8"
+               BlueprintIdentifier = "4C82C3362309418B843E4744"
                BuildableName = "libPods-WTURLImageView.a"
                BlueprintName = "Pods-WTURLImageView"
                ReferencedContainer = "container:Pods.xcodeproj">
