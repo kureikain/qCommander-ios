@@ -100,7 +100,7 @@
 		170A067A18644A3B00E17B4C /* AXQSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXQSlide.m; sourceTree = "<group>"; };
 		170A067C18644D0400E17B4C /* AXControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXControl.h; sourceTree = "<group>"; };
 		170A067D18644D0400E17B4C /* AXControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXControl.m; sourceTree = "<group>"; };
-		170A8E14178F59AD00853682 /* qCommander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qCommander.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		170A8E14178F59AD00853682 /* QSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		170A8E17178F59AD00853682 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		170A8E19178F59AD00853682 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		170A8E1B178F59AD00853682 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -265,7 +265,7 @@
 		170A8E15178F59AD00853682 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				170A8E14178F59AD00853682 /* qCommander.app */,
+				170A8E14178F59AD00853682 /* QSlider.app */,
 				170A8E3D178F59AE00853682 /* qCommanderTests.octest */,
 			);
 			name = Products;
@@ -531,7 +531,7 @@
 			);
 			name = qCommander;
 			productName = qCommander;
-			productReference = 170A8E14178F59AD00853682 /* qCommander.app */;
+			productReference = 170A8E14178F59AD00853682 /* QSlider.app */;
 			productType = "com.apple.product-type.application";
 		};
 		170A8E3C178F59AE00853682 /* qCommanderTests */ = {
@@ -842,7 +842,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QSlider;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -866,7 +866,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QSlider;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
