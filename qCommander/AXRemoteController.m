@@ -79,7 +79,9 @@
     
     //UI setup and style for the app
     [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:40/255.0f green:209/255.0f blue:119/255.0f alpha:1.0f];
+    
+//    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:40/255.0f green:209/255.0f blue:119/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:243/255.0f green:123/255.0f blue:29/255.0f alpha:1.0f];
     
     //Remove the title of back button. only chevron icon.
     self.navigationController.navigationBar.topItem.title = @" ";

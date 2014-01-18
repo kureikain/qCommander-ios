@@ -12,6 +12,7 @@
 //#import "MMDrawerController/MMDrawerController.h"
 #import "AXRemoteController.h"
 #import "AXHelpViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface AXViewController : UIViewController <ZBarReaderDelegate, UITextFieldDelegate>
 

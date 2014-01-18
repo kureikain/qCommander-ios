@@ -66,6 +66,9 @@
 		17A913FB187D4A4000EEDCAD /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A913F7187D4A4000EEDCAD /* page2.png */; };
 		17A913FC187D4A4000EEDCAD /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A913F8187D4A4000EEDCAD /* page3.png */; };
 		17A913FD187D4A4000EEDCAD /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A913F9187D4A4000EEDCAD /* page4.png */; };
+		17AEAB30188B12B9004FFCFC /* camera_g@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17AEAB2F188B12B9004FFCFC /* camera_g@2x.png */; };
+		17AEAB32188B329D004FFCFC /* camera_r@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17AEAB31188B329D004FFCFC /* camera_r@2x.png */; };
+		17AEAB34188B33BE004FFCFC /* camera_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17AEAB33188B33BE004FFCFC /* camera_b@2x.png */; };
 		17DCF98918794D7C00CEABDA /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17DCF97D18794D7C00CEABDA /* Roboto-ThinItalic.ttf */; };
 		17DCF98A18794D7C00CEABDA /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17DCF97E18794D7C00CEABDA /* Roboto-Thin.ttf */; };
 		17DCF98B18794D7C00CEABDA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17DCF97F18794D7C00CEABDA /* Roboto-Regular.ttf */; };
@@ -187,6 +190,9 @@
 		17A913F7187D4A4000EEDCAD /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		17A913F8187D4A4000EEDCAD /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
 		17A913F9187D4A4000EEDCAD /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		17AEAB2F188B12B9004FFCFC /* camera_g@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_g@2x.png"; sourceTree = "<group>"; };
+		17AEAB31188B329D004FFCFC /* camera_r@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_r@2x.png"; sourceTree = "<group>"; };
+		17AEAB33188B33BE004FFCFC /* camera_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_b@2x.png"; sourceTree = "<group>"; };
 		17DCF97D18794D7C00CEABDA /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Resources/Roboto/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		17DCF97E18794D7C00CEABDA /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Resources/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		17DCF97F18794D7C00CEABDA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Resources/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -454,6 +460,9 @@
 		17A89AAD187A1015005E2526 /* controlv2 */ = {
 			isa = PBXGroup;
 			children = (
+				17AEAB33188B33BE004FFCFC /* camera_b@2x.png */,
+				17AEAB31188B329D004FFCFC /* camera_r@2x.png */,
+				17AEAB2F188B12B9004FFCFC /* camera_g@2x.png */,
 				17FCE634187A9B4F0002F824 /* connect_s@2x.png */,
 				17FCE635187A9B4F0002F824 /* connect@2x.png */,
 				17A89AC6187A7410005E2526 /* help2@2x.png */,
@@ -599,6 +608,7 @@
 				17A89AC7187A7410005E2526 /* help2@2x.png in Resources */,
 				17A89AB7187A110F005E2526 /* play@2x.png in Resources */,
 				170A8E2A178F59AE00853682 /* Default.png in Resources */,
+				17AEAB30188B12B9004FFCFC /* camera_g@2x.png in Resources */,
 				17A89ABD187A14F3005E2526 /* slide_pop@2x.png in Resources */,
 				17A913FD187D4A4000EEDCAD /* page4.png in Resources */,
 				1796D1631882250D001E2C3B /* MainStoryboard_iPad.storyboard in Resources */,
@@ -612,9 +622,11 @@
 				17A913FC187D4A4000EEDCAD /* page3.png in Resources */,
 				17A89ABB187A11DE005E2526 /* prev@2x.png in Resources */,
 				17A89ABF187A5D36005E2526 /* camera@2x.png in Resources */,
+				17AEAB32188B329D004FFCFC /* camera_r@2x.png in Resources */,
 				17A89AB5187A1015005E2526 /* last@2x.png in Resources */,
 				17A89ADA187A7AD3005E2526 /* rs@2x.png in Resources */,
 				17A89AB4187A1015005E2526 /* first@2x.png in Resources */,
+				17AEAB34188B33BE004FFCFC /* camera_b@2x.png in Resources */,
 				17DCF99318794D7C00CEABDA /* Roboto-BlackItalic.ttf in Resources */,
 				17A89AC3187A6F2F005E2526 /* help@2x.png in Resources */,
 				17DCF99418794D7C00CEABDA /* Roboto-Black.ttf in Resources */,

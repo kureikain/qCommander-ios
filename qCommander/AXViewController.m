@@ -46,18 +46,25 @@
     //Setup UI
     CALayer *imageLayer = tutorialBtn.layer;
     [imageLayer setCornerRadius:3];
-//    [imageLayer setBorderWidth:2];
+    [imageLayer setBorderWidth:2.0f];
     [imageLayer setMasksToBounds:YES];
     
     CALayer *imageLayer2 = connectBtn.layer;
-    [imageLayer2 setCornerRadius:5];
-    //    [imageLayer setBorderWidth:2];
+    [imageLayer2 setCornerRadius:3];
+    [imageLayer2 setBorderWidth:2.0f];
+    
+    imageLayer2.borderColor = [UIColor colorWithRed:221/255.0f green:221/255.0f blue:221/255.0f alpha:1.0f].CGColor;
+    
+    [connectBtn setBackgroundColor:[UIColor clearColor]];
     [imageLayer2 setMasksToBounds:YES];
     
     CALayer *imageLayer3 = qrCodeBtn.layer;
-    [imageLayer3 setCornerRadius:5];
-    [imageLayer3 setBorderWidth:7];
-    [imageLayer3 setBorderColor:(__bridge CGColorRef)([UIColor colorWithRed:78/255.0f green:122/255.0f blue:189/255.0f alpha:1.0f])];
+    [imageLayer3 setCornerRadius:3];
+    [imageLayer3 setBorderWidth:2.0f];
+    
+//    [UIColor colorWithRed:243/255.0f green:123/255.0f blue:29/255.0f alpha:1.0f].CGColor;
+    [imageLayer3 setBorderColor:[UIColor colorWithRed:221/255.0f green:221/255.0f blue:221/255.0f alpha:1.0f].CGColor];
+    
     [imageLayer3 setMasksToBounds:YES];
     
     CALayer* layer = [jumboLbl layer];
@@ -65,7 +72,7 @@
 //    bottomBorder.borderColor = [UIColor darkGrayColor].CGColor;
     bottomBorder.borderWidth = 2;
     bottomBorder.frame = CGRectMake(0, -2, layer.frame.size.width, 2);
-    [bottomBorder setBorderColor:[UIColor colorWithRed:71/255.0f green:74/255.0f blue:86/255.0f alpha:0.8f].CGColor];
+    [bottomBorder setBorderColor:[UIColor colorWithRed:243/255.0f green:123/255.0f blue:29/255.0f alpha:0.8f].CGColor];
     [layer addSublayer:bottomBorder];
     
 }

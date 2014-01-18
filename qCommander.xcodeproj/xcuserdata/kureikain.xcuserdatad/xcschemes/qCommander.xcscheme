@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "170A8E13178F59AD00853682"
-               BuildableName = "qCommander.app"
+               BuildableName = "QSlider.app"
                BlueprintName = "qCommander"
                ReferencedContainer = "container:qCommander.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "170A8E13178F59AD00853682"
-            BuildableName = "qCommander.app"
+            BuildableName = "QSlider.app"
             BlueprintName = "qCommander"
             ReferencedContainer = "container:qCommander.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "170A8E13178F59AD00853682"
-            BuildableName = "qCommander.app"
+            BuildableName = "QSlider.app"
             BlueprintName = "qCommander"
             ReferencedContainer = "container:qCommander.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "170A8E13178F59AD00853682"
-            BuildableName = "qCommander.app"
+            BuildableName = "QSlider.app"
             BlueprintName = "qCommander"
             ReferencedContainer = "container:qCommander.xcodeproj">
          </BuildableReference>

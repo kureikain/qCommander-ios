@@ -54,6 +54,9 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
+
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:243/255.0f green:123/255.0f blue:29/255.0f alpha:1.0f];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
