@@ -315,36 +315,6 @@
             endingLineNumber = "43"
             landmarkName = "-loadScreenshotWithCallback:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
-                  moduleName = "QSlider"
-                  urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "411776065.936402"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "322">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
-                  moduleName = "QSlider"
-                  urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "411776065.936635"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "556">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -369,12 +339,12 @@
                   symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
                   moduleName = "QSlider"
                   urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "411776065.936831"
+                  timestampString = "411975237.569553"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "430">
+                  offsetFromSymbolStart = "410">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -383,12 +353,12 @@
                   symbolName = "__39-[AXQSlide loadScreenshotWithCallback:]_block_invoke"
                   moduleName = "QSlider"
                   urlString = "file:///Users/kureikain/Documents/ios/qCommander/qCommander/AXQSlide.m"
-                  timestampString = "411776065.937006"
+                  timestampString = "411975237.569912"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "542">
+                  offsetFromSymbolStart = "470">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -796,6 +766,22 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "qCommander/AXRemoteController.m"
+            timestampString = "411890192.042328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "-connectWithAccessCode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
