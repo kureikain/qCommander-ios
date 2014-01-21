@@ -1,3 +1,14 @@
+v1.3.0
+* Help screen
+* Don't show connected alert. It breaks UX
+
+v1.2.0
+* Rename to QSlider
+* Icon 
+* Loading screen
+* Tutorial
+
+
 v1.1.0
 * Stable UI
 * Connect, Disconnect detect

@@ -84,7 +84,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:243/255.0f green:123/255.0f blue:29/255.0f alpha:1.0f];
     
     //Remove the title of back button. only chevron icon.
-    self.navigationController.navigationBar.topItem.title = @" ";
+//    self.navigationController.navigationBar.topItem.title = @" ";
     
     [slideJumper setContinuous:NO];
     if (token == nil) {
@@ -202,8 +202,8 @@ Allow this receiving remote event from lock screen
                     [self.connectivityIndicator setText:@"Connected"];
                     
                     //Let user know
-                    UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
-                    [a show];
+//                    UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+//                    [a show];
                     [HUD hideWithAnimation:YES];
                 });
             }

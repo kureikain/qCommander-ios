@@ -31,19 +31,19 @@
 	// Do any additional setup after loading the view.
 
     //Data model
-    pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
-    pageImages = @[@"page1", @"page2", @"page3", @"page3", @"page4"];
+    pageTitles = @[@"Step 1: Installing Bookmarklet", @"Step 2.1: Connecting", @"Step 2.2: Connecting", @"Step 3: Control", @"Step 4: Control Right On Lockscreen", @"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
+    pageImages = @[@"1.installing_bookmark.png", @"20.activating_bookmark.png", @"21.connecting.png", @"31.control.png", @"41.lockscreen.png", @"page1", @"page2", @"page3", @"page3", @"page4"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpContainerView"];
     self.pageViewController.dataSource = self;
-    
+
     HelpPageViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     [self addChildViewController:pageViewController];
     [self.view addSubview:pageViewController.view];

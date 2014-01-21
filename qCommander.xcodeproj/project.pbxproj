@@ -29,6 +29,8 @@
 		170A8E58178F6F7B00853682 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170A8E57178F6F7B00853682 /* CFNetwork.framework */; };
 		170A8E5A178F6F8500853682 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170A8E59178F6F8500853682 /* Security.framework */; };
 		172B1EDE185E3B510060C973 /* AXRemoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B1EDD185E3B510060C973 /* AXRemoteController.m */; };
+		174017D8188E32CE00337C9A /* 1.installing_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 174017D7188E32CE00337C9A /* 1.installing_bookmark.png */; };
+		174017DA188E3E0E00337C9A /* 20.activating_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 174017D9188E3E0E00337C9A /* 20.activating_bookmark.png */; };
 		1747F771178FCF1700FC2BF9 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F76B178FCF1700FC2BF9 /* libzbar.a */; };
 		1747F772178FCF1700FC2BF9 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1747F76D178FCF1700FC2BF9 /* zbar-back.png */; };
 		1747F773178FCF1700FC2BF9 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 1747F76E178FCF1700FC2BF9 /* zbar-help.html */; };
@@ -41,6 +43,9 @@
 		1747F77F178FCF8A00FC2BF9 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747F77E178FCF8A00FC2BF9 /* libiconv.dylib */; };
 		174D31CF185F1558003A2E68 /* HelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174D31CE185F1558003A2E68 /* HelpPageViewController.m */; };
 		1753F10E187C06190064C69B /* AXHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1753F10D187C06190064C69B /* AXHelpViewController.m */; };
+		1775E019188E469A0012D07C /* 31.control.png in Resources */ = {isa = PBXBuildFile; fileRef = 1775E017188E469A0012D07C /* 31.control.png */; };
+		1775E01A188E469A0012D07C /* 21.connecting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1775E018188E469A0012D07C /* 21.connecting.png */; };
+		1775E01C188E49110012D07C /* 41.lockscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1775E01B188E49110012D07C /* 41.lockscreen.png */; };
 		177921E2185E4D7100EF5CE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177921E0185E402300EF5CE2 /* SystemConfiguration.framework */; };
 		177921E8185E4F9A00EF5CE2 /* UIViewController+BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */; };
 		177CEF5D1870EAA60004D3D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CEF5C1870EAA60004D3D8 /* MediaPlayer.framework */; };
@@ -130,6 +135,8 @@
 		170A8E59178F6F8500853682 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		172B1EDC185E3B510060C973 /* AXRemoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRemoteController.h; sourceTree = "<group>"; };
 		172B1EDD185E3B510060C973 /* AXRemoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXRemoteController.m; sourceTree = "<group>"; };
+		174017D7188E32CE00337C9A /* 1.installing_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.installing_bookmark.png; sourceTree = "<group>"; };
+		174017D9188E3E0E00337C9A /* 20.activating_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.activating_bookmark.png; sourceTree = "<group>"; };
 		1747F757178FCF1700FC2BF9 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		1747F758178FCF1700FC2BF9 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		1747F759178FCF1700FC2BF9 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -164,6 +171,9 @@
 		174D31CE185F1558003A2E68 /* HelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpPageViewController.m; sourceTree = "<group>"; };
 		1753F10C187C06190064C69B /* AXHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXHelpViewController.h; sourceTree = "<group>"; };
 		1753F10D187C06190064C69B /* AXHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXHelpViewController.m; sourceTree = "<group>"; };
+		1775E017188E469A0012D07C /* 31.control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 31.control.png; sourceTree = "<group>"; };
+		1775E018188E469A0012D07C /* 21.connecting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 21.connecting.png; sourceTree = "<group>"; };
+		1775E01B188E49110012D07C /* 41.lockscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 41.lockscreen.png; sourceTree = "<group>"; };
 		177921E0185E402300EF5CE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		177921E6185E4F8000EF5CE2 /* UIViewController+BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButton.h"; sourceTree = "<group>"; };
 		177921E7185E4F9A00EF5CE2 /* UIViewController+BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButton.m"; sourceTree = "<group>"; };
@@ -494,6 +504,11 @@
 		17A913F5187D4A4000EEDCAD /* help */ = {
 			isa = PBXGroup;
 			children = (
+				1775E01B188E49110012D07C /* 41.lockscreen.png */,
+				1775E017188E469A0012D07C /* 31.control.png */,
+				1775E018188E469A0012D07C /* 21.connecting.png */,
+				174017D9188E3E0E00337C9A /* 20.activating_bookmark.png */,
+				174017D7188E32CE00337C9A /* 1.installing_bookmark.png */,
 				17A913F6187D4A4000EEDCAD /* page1.png */,
 				17A913F7187D4A4000EEDCAD /* page2.png */,
 				17A913F8187D4A4000EEDCAD /* page3.png */,
@@ -612,6 +627,7 @@
 				17A89ABD187A14F3005E2526 /* slide_pop@2x.png in Resources */,
 				17A913FD187D4A4000EEDCAD /* page4.png in Resources */,
 				1796D1631882250D001E2C3B /* MainStoryboard_iPad.storyboard in Resources */,
+				174017D8188E32CE00337C9A /* 1.installing_bookmark.png in Resources */,
 				17DCF98D18794D7C00CEABDA /* Roboto-Medium.ttf in Resources */,
 				17DCF99218794D7C00CEABDA /* Roboto-Bold.ttf in Resources */,
 				170A8E2C178F59AE00853682 /* Default@2x.png in Resources */,
@@ -621,6 +637,7 @@
 				17A913FA187D4A4000EEDCAD /* page1.png in Resources */,
 				17A913FC187D4A4000EEDCAD /* page3.png in Resources */,
 				17A89ABB187A11DE005E2526 /* prev@2x.png in Resources */,
+				1775E01C188E49110012D07C /* 41.lockscreen.png in Resources */,
 				17A89ABF187A5D36005E2526 /* camera@2x.png in Resources */,
 				17AEAB32188B329D004FFCFC /* camera_r@2x.png in Resources */,
 				17A89AB5187A1015005E2526 /* last@2x.png in Resources */,
@@ -629,6 +646,8 @@
 				17AEAB34188B33BE004FFCFC /* camera_b@2x.png in Resources */,
 				17DCF99318794D7C00CEABDA /* Roboto-BlackItalic.ttf in Resources */,
 				17A89AC3187A6F2F005E2526 /* help@2x.png in Resources */,
+				1775E01A188E469A0012D07C /* 21.connecting.png in Resources */,
+				174017DA188E3E0E00337C9A /* 20.activating_bookmark.png in Resources */,
 				17DCF99418794D7C00CEABDA /* Roboto-Black.ttf in Resources */,
 				17A89AC5187A6F87005E2526 /* help_s@2x.png in Resources */,
 				1747F772178FCF1700FC2BF9 /* zbar-back.png in Resources */,
@@ -646,6 +665,7 @@
 				17DCF98E18794D7C00CEABDA /* Roboto-LightItalic.ttf in Resources */,
 				17DCF98B18794D7C00CEABDA /* Roboto-Regular.ttf in Resources */,
 				17A89ABA187A11DE005E2526 /* next@2x.png in Resources */,
+				1775E019188E469A0012D07C /* 31.control.png in Resources */,
 				17DCF99018794D7C00CEABDA /* Roboto-Italic.ttf in Resources */,
 				1747F775178FCF1700FC2BF9 /* zbar-samples.png in Resources */,
 				17DCF98918794D7C00CEABDA /* Roboto-ThinItalic.ttf in Resources */,
@@ -849,7 +869,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qCommander/qCommander-Prefix.pch";
 				INFOPLIST_FILE = "qCommander/qCommander-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
@@ -873,7 +893,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qCommander/qCommander-Prefix.pch";
 				INFOPLIST_FILE = "qCommander/qCommander-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
