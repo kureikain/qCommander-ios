@@ -31,8 +31,8 @@
 	// Do any additional setup after loading the view.
 
     //Data model
-    pageTitles = @[@"Step 1: Installing Bookmarklet", @"Step 2.1: Connecting", @"Step 2.2: Connecting", @"Step 3: Control", @"Step 4: Control Right On Lockscreen", @"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
-    pageImages = @[@"1.installing_bookmark.png", @"20.activating_bookmark.png", @"21.connecting.png", @"31.control.png", @"41.lockscreen.png", @"page1", @"page2", @"page3", @"page3", @"page4"];
+    pageTitles = @[@"Step 1: Installing Bookmarklet", @"Step 2.1: Connecting", @"Step 2.2: Connecting", @"Step 3: Control", @"Step 4: Control Right On Lockscreen", @"More help"];//, @"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
+    pageImages = @[@"1.installing_bookmark.png", @"20.activating_bookmark.png", @"21.connecting.png", @"31.control.png", @"41.lockscreen.png", @"100.end.png"];// @"page1", @"page2", @"page3", @"page3", @"page4"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpContainerView"];

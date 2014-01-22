@@ -1,4 +1,8 @@
-v1.3.0
+v1.4.1
+* Change icon.
+* Resize helpscreen.
+
+v1.4.0
 * Help screen
 * Don't show connected alert. It breaks UX
 
