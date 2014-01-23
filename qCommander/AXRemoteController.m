@@ -271,10 +271,8 @@ Allow this receiving remote event from lock screen
         //Alert disconnected if we are oncontrol screen
 //        appDelegate.navigationController.topViewController.view
         UINavigationController * n = [self navigationController];
-        if ([[n topViewController] isKindOfClass:[AXRemoteController class]] && disconnected == FALSE) {
-            disconnected = TRUE;
+        if ([[n topViewController] isKindOfClass:[AXRemoteController class]] && browserConnectStatus == online) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                
                 UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser disconnected. Check browser and bookmarklet" message:@"You cannot control until connection is restored." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
                 
                 [a show];
