@@ -184,6 +184,7 @@ Allow this receiving remote event from lock screen
     static int countCommand = 0;
     countCommand = 0;
     [HUD showInView:self.view];
+    static BOOL disconnected = FALSE;
     slide = [[AXQSlide alloc] initWithToken:code andUrl:@"" whenCompletion:^(NSDictionary * slideInfo) {
         NSLog(@"Data change");
 
@@ -204,6 +205,7 @@ Allow this receiving remote event from lock screen
                     //Let user know
 //                    UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser connection is restored." message:@"Great, you can continue to control slide now." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
 //                    [a show];
+                    disconnected = FALSE;
                     [HUD hideWithAnimation:YES];
                 });
             }
@@ -266,17 +268,26 @@ Allow this receiving remote event from lock screen
         }
         
     } whenDisconnect: ^ BOOL(NSDictionary * s) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser disconnected. Check browser and bookmarklet" message:@"You cannot control until connection is restored." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
-            
-            [a show];
-            browserConnectStatus = offline;
-            
-            [self.connectivityIndicator setBackgroundColor:[UIColor colorWithRed:245/255.0f green:111/255.0f blue:108/255.0f alpha:0.9f]];
-            [self.connectivityIndicator setText:@"Disconnected"];
-            [self setTitle:@"Disconnected"];
-            [HUD showInView:self.view];
-        });
+        //Alert disconnected if we are oncontrol screen
+//        appDelegate.navigationController.topViewController.view
+        UINavigationController * n = [self navigationController];
+        if ([[n topViewController] isKindOfClass:[AXRemoteController class]] && disconnected == FALSE) {
+            disconnected = TRUE;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Browser disconnected. Check browser and bookmarklet" message:@"You cannot control until connection is restored." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                
+                [a show];
+                browserConnectStatus = offline;
+                
+                [self.connectivityIndicator setBackgroundColor:[UIColor colorWithRed:245/255.0f green:111/255.0f blue:108/255.0f alpha:0.9f]];
+                [self.connectivityIndicator setText:@"Disconnected"];
+                [self setTitle:@"Disconnected"];
+                [HUD showInView:self.view];
+            });
+        } else {
+            NSLog(@"On main app, don't need to report");
+        }
         return false;
     } whenFail: ^ BOOL() {
         dispatch_async(dispatch_get_main_queue(), ^{
