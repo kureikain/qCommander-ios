@@ -11,7 +11,8 @@
 #include <stdlib.h>
 #import <CommonCrypto/CommonDigest.h>
 
-#define BACKEND_DATA_HOST @"https://qcommander.firebaseio-demo.com/"
+//#define BACKEND_DATA_HOST @"https://qcommander.firebaseio-demo.com/"
+#define BACKEND_DATA_HOST @"https://qslider.firebaseio.com/"
 
 //typedef void (^ UpdateScreenshotBlock)(id, int);
 typedef void (^ UpdateScreenshotBlock)(NSString *);
