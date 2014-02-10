@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     [self setUpEventHandler];
-    [self bootstrapFirebase];
+//    [self bootstrapFirebase];
     [self setUpZbar];
 	// Do any additional setup after loading the view, typically from a nib.
 
@@ -149,53 +149,54 @@
 /**
  Create a firebase URI location for command
  */
--(Firebase *) _fireFile
-{
-    // Create a reference to a Firebase location
-    NSString * url = [@"https://qcommander.firebaseIO-demo.com/command_queues/" stringByAppendingFormat:@"%@", [self _firetoken]];
-    return firebase = [[Firebase alloc] initWithUrl:url];
-}
+//-(Firebase *) _fireFile
+//{
+//    // Create a reference to a Firebase location
+////    BACKEND_DATA_HOST
+//    NSString * url = [@"https://qcommander.firebaseIO-demo.com/command_queues/" stringByAppendingFormat:@"%@", [self _firetoken]];
+//    return firebase = [[Firebase alloc] initWithUrl:url];
+//}
 
 /**
  Push a command to firebase
  */
--(void) pushCommand:(NSDictionary *)d
-{
-    Firebase * f = [self _fireFile];
-    
-    [f setValue:d];
-    
-    // Read data and react to changes
-    [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
-    }];
-}
+//-(void) pushCommand:(NSDictionary *)d
+//{
+//    Firebase * f = [self _fireFile];
+//    
+//    [f setValue:d];
+//    
+//    // Read data and react to changes
+//    [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+//    }];
+//}
 
 /*
  Test firebase conf
  */
-- (void) bootstrapFirebase
-{
-    // Write data to Firebase
-    NSUInteger interval = [[NSDate date] timeIntervalSince1970];
-    NSString * s = [NSString stringWithFormat:@"%d", interval];
-    NSDictionary *d = @{@"cmd": @"next", @"t":s};
-    [self pushCommand:d];
-}
+//- (void) bootstrapFirebase
+//{
+//    // Write data to Firebase
+//    NSUInteger interval = [[NSDate date] timeIntervalSince1970];
+//    NSString * s = [NSString stringWithFormat:@"%d", interval];
+//    NSDictionary *d = @{@"cmd": @"next", @"t":s};
+//    [self pushCommand:d];
+//}
 
-- (IBAction)cmdNext:(id)sender {
-    NSUInteger interval = [[NSDate date] timeIntervalSince1970];
-    NSString * s = [NSString stringWithFormat:@"%d", interval];
-    NSDictionary *d = @{@"cmd": @"next", @"t":s};
-    [self pushCommand:d];
-}
-
-- (IBAction)cmdPrev:(id)sender {
-    NSUInteger interval = [[NSDate date] timeIntervalSince1970];
-    NSString * s = [NSString stringWithFormat:@"%d", interval];
-    NSDictionary *d = @{@"cmd": @"prev", @"t":s};
-    [self pushCommand:d];
-}
+//- (IBAction)cmdNext:(id)sender {
+//    NSUInteger interval = [[NSDate date] timeIntervalSince1970];
+//    NSString * s = [NSString stringWithFormat:@"%d", interval];
+//    NSDictionary *d = @{@"cmd": @"next", @"t":s};
+//    [self pushCommand:d];
+//}
+//
+//- (IBAction)cmdPrev:(id)sender {
+//    NSUInteger interval = [[NSDate date] timeIntervalSince1970];
+//    NSString * s = [NSString stringWithFormat:@"%d", interval];
+//    NSDictionary *d = @{@"cmd": @"prev", @"t":s};
+//    [self pushCommand:d];
+//}
 
 - (IBAction)scanToken:(id)sender {
     _scanningCode = FALSE;

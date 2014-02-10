@@ -10,6 +10,7 @@
 #import <Firebase/Firebase.h>
 #import "ZBarSDK.h"
 //#import "MMDrawerController/MMDrawerController.h"
+#import "AXQSlide.h"
 #import "AXRemoteController.h"
 #import "AXHelpViewController.h"
 #import <QuartzCore/QuartzCore.h>
